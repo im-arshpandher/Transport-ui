@@ -17,7 +17,7 @@ const Hero = () => {
     >
       <div className="fixed top-0 right-0 z-[-1] w-full h-screen">
         <img
-          src={isDark ? "hero_dark.jpg" : "hero_light2.png"}
+          src={isDark ? "hero_dark.webp" : "hero_light2.webp"}
           alt="Background"
           className={isDark?"w-full h-full object-cover":"w-full h-full object-cover"} 
         />

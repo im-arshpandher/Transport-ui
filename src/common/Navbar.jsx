@@ -52,7 +52,7 @@ const Navbar = () => {
           <Link to="/">
             <div className="flex items-center">
               <img
-                src="\logo-removebg-preview.png"
+                src="\logo-removebg-preview.webp"
                 alt="Logo"
                 className="h-10 w-auto mr-2" // Set height to 40px, keep aspect ratio, add right margin
                 style={{ maxWidth: "120px" }} // Optional: limit max width
