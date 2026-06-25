@@ -16,37 +16,37 @@ import { useSelector } from "react-redux";
 const services = [
   {
     title: "Flatbed Trucking",
-    icon: <FaTruckMoving className="text-4xl text-blue-600" />,
+    icon: <FaTruckMoving className="text-4xl text-brand-red" />,
     description:
       "Exclusive flatbed transportation for oversized, heavy, or irregular cargo with full compliance and safety.",
   },
   {
     title: "Project Cargo Transport",
-    icon: <FaShippingFast className="text-4xl text-blue-600" />,
+    icon: <FaShippingFast className="text-4xl text-brand-red" />,
     description:
       "Special handling for large-scale industrial and construction equipment, delivered directly to site.",
   },
   {
     title: "Route Planning & Optimization",
-    icon: <FaMapMarkedAlt className="text-4xl text-blue-600" />,
+    icon: <FaMapMarkedAlt className="text-4xl text-brand-red" />,
     description:
       "Strategic route planning across the UAE to minimize delays, avoid restrictions, and reduce costs.",
   },
   {
     title: "Secure Loading & Lashing",
-    icon: <FaShieldAlt className="text-4xl text-blue-600" />,
+    icon: <FaShieldAlt className="text-4xl text-brand-red" />,
     description:
       "Expert team ensures safe lashing, tarping, and load securing — critical for road compliance.",
   },
   {
   title: "24/7 Transport Support",
-  icon: <FaClock className="text-4xl text-blue-600" />,
+  icon: <FaClock className="text-4xl text-brand-red" />,
   description:
     "Round-the-clock assistance to ensure smooth coordination, timely updates, and quick issue resolution during transit.",
 },
   {
     title: "Custom Solutions for Heavy Industries",
-    icon: <FaCogs className="text-4xl text-blue-600" />,
+    icon: <FaCogs className="text-4xl text-brand-red" />,
     description:
       "Tailored transport services for manufacturing, energy, construction, and infrastructure sectors.",
   },
@@ -64,35 +64,47 @@ const Services = () => {
   return (
     <>
       <Navbar />
-      <section className={`py-20 ${isDark ? "bg-gray-800" : "bg-gray-50"}`}>
+      <section className={`pt-28 pb-20 md:pt-40 md:pb-24 ${isDark ? "bg-gray-800" : "bg-gray-50"}`}>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           {/* Header */}
           <motion.div
-            className={`text-center mb-12 ${isDark ? "text-white" : "text-gray-800"}`}
-            initial={{ opacity: 0, y: -50 }}
+            className="text-center mb-16"
+            initial={{ opacity: 0, y: -30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
           >
-            <h2 className="text-3xl font-bold">Our Services</h2>
-            <p className={`text-gray-600 mt-2 max-w-2xl mx-auto ${isDark ? "text-white" : ""}`}>
-              We provide a full range of logistics and heavy transport solutions
-              tailored to your needs.
+            <span className="text-xs md:text-sm font-extrabold tracking-widest text-brand-red uppercase bg-brand-red/10 px-3 py-1.5 rounded-md inline-block mb-4">
+              Our Capabilities
+            </span>
+            <h1
+              className={`text-3xl sm:text-4xl md:text-5xl font-black leading-tight tracking-tight uppercase ${
+                isDark ? "text-white" : "text-slate-900"
+              }`}
+            >
+              Specialized GCC Flatbed Services
+            </h1>
+            <p className={`mt-4 text-sm sm:text-base max-w-2xl mx-auto text-center ${isDark ? "text-slate-300" : "text-slate-600"}`}>
+              We provide a comprehensive range of logistics and heavy transport solutions tailored to the unique requirements of heavy industries.
             </p>
           </motion.div>
 
           {/* Service Cards */}
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
             {services.map((service, index) => (
               <motion.div
                 key={index}
-                className={`p-6 rounded-lg shadow transition ${isDark ? "bg-gray-700 text-white" : "bg-white text-gray-800"}`}
-                initial={{ opacity: 0, scale: 0.9 }}
-                animate={{ opacity: 1, scale: 1 }}
-                transition={{ duration: 0.5, delay: index * 0.2 }}
+                className={`p-8 rounded-xl shadow-md border border-t-4 border-t-brand-red hover:shadow-xl hover:-translate-y-1.5 transition-all duration-300 ${
+                  isDark
+                    ? "bg-slate-900 border-slate-800 text-white"
+                    : "bg-white border-slate-200/60 text-slate-800"
+                }`}
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.5, delay: index * 0.1 }}
               >
-                <div className="flex justify-center mb-4">{service.icon}</div>
-                <h3 className="text-xl font-semibold text-center">{service.title}</h3>
-                <p className={`text-center mt-2 ${isDark ? "text-white" : "text-gray-600"}`}>
+                <div className="flex justify-center mb-6">{service.icon}</div>
+                <h3 className="text-xl font-black uppercase tracking-tight text-center mb-3">{service.title}</h3>
+                <p className={`text-justify leading-relaxed text-sm ${isDark ? "text-slate-300" : "text-slate-600"}`}>
                   {service.description}
                 </p>
               </motion.div>

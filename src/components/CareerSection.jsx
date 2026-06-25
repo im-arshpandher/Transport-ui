@@ -104,7 +104,7 @@ const CareerSection = () => {
 
   return (
     <motion.section
-      className={`py-20 ${isDark ? "bg-gray-900" : "bg-white"}`}
+      className={`pt-28 pb-20 md:pt-40 md:pb-24 ${isDark ? "bg-gray-900" : "bg-white"}`}
       initial="hidden"
       animate="visible"
       transition={{ staggerChildren: 0.2 }}
@@ -112,15 +112,22 @@ const CareerSection = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header */}
         <motion.div
-          className="text-center mb-12"
+          className="text-center mb-16"
           variants={fadeIn}
-          transition={{ duration: 0.5 }}
+          transition={{ duration: 0.6 }}
         >
-          <h2 className={`text-3xl font-bold ${isDark ? "text-white" : "text-gray-800"}`}>
-            Join Our Team
-          </h2>
-          <p className={`${isDark ? "text-white" : "text-gray-600"} mt-2`}>
-            Be part of a dynamic logistics and heavy transport company in the UAE.
+          <span className="text-xs md:text-sm font-extrabold tracking-widest text-brand-red uppercase bg-brand-red/10 px-3 py-1.5 rounded-md inline-block mb-4">
+            Work With The Best
+          </span>
+          <h1
+            className={`text-3xl sm:text-4xl md:text-5xl font-black leading-tight tracking-tight uppercase ${
+              isDark ? "text-white" : "text-slate-900"
+            }`}
+          >
+            Join The Mashiana Logistics Team
+          </h1>
+          <p className={`mt-4 text-sm sm:text-base max-w-2xl mx-auto text-center ${isDark ? "text-slate-300" : "text-slate-600"}`}>
+            Be part of a dynamic logistics and heavy transport leader in the UAE. We offer competitive growth and professional career paths.
           </p>
         </motion.div>
 
@@ -137,19 +144,19 @@ const CareerSection = () => {
           {jobList.map((job, idx) => (
             <motion.div
               key={idx}
-              className={`border rounded-lg p-6 shadow hover:shadow-md transition 
-                ${isDark ? "bg-gray-800 border-gray-700 text-white" : "bg-white border-gray-200 text-gray-800"}`}
+              className={`p-6 border border-l-4 border-l-brand-red rounded-xl shadow-md hover:shadow-xl hover:-translate-y-1 transition-all duration-300 
+                ${isDark ? "bg-slate-900 border-slate-800 text-white" : "bg-white border-slate-200 text-slate-800"}`}
               variants={fadeIn}
               transition={{ duration: 0.5 }}
             >
-              <h3 className="text-xl font-semibold">{job.title}</h3>
-              <p className="mt-1">
+              <h3 className="text-lg font-black uppercase tracking-tight">{job.title}</h3>
+              <p className={`text-xs font-semibold mt-1 uppercase tracking-wider text-brand-red`}>
                 {job.location} • {job.type}
               </p>
-              <p className="mt-4">{job.description}</p>
+              <p className={`mt-4 text-sm text-justify leading-relaxed ${isDark ? "text-slate-300" : "text-slate-600"}`}>{job.description}</p>
               <a
                 href="#apply"
-                className="inline-block mt-4 text-blue-500 hover:text-blue-600 font-medium"
+                className="inline-block mt-4 text-brand-red hover:text-brand-red-dark font-extrabold uppercase text-xs tracking-wider transition-colors"
               >
                 Apply Now →
               </a>
@@ -160,7 +167,7 @@ const CareerSection = () => {
         {/* Application Section */}
         <motion.div
           id="apply"
-          className={`mt-20 p-8 rounded-lg shadow-md 
+          className={`mt-20 p-4 sm:p-8 rounded-lg shadow-md 
             ${isDark ? "bg-gray-800 text-white" : "bg-gray-50"}`}
           variants={fadeIn}
           transition={{ duration: 0.5 }}
@@ -173,7 +180,9 @@ const CareerSection = () => {
               type="text"
               name="name"
               placeholder="Full Name"
-              className="w-full px-4 py-2 border border-gray-300 rounded focus:outline-none"
+              className={`w-full px-4 py-2 border rounded focus:outline-none focus:ring-2 focus:ring-brand-red focus:border-transparent transition-all duration-200 ${
+                isDark ? "bg-gray-900 border-gray-700 text-white" : "bg-white border-gray-300"
+              }`}
               required
               onChange={handleChange}
               value={formData.name}
@@ -182,7 +191,9 @@ const CareerSection = () => {
               type="email"
               name="email"
               placeholder="Email Address"
-              className="w-full px-4 py-2 border border-gray-300 rounded focus:outline-none"
+              className={`w-full px-4 py-2 border rounded focus:outline-none focus:ring-2 focus:ring-brand-red focus:border-transparent transition-all duration-200 ${
+                isDark ? "bg-gray-900 border-gray-700 text-white" : "bg-white border-gray-300"
+              }`}
               required
               onChange={handleChange}
               value={formData.email}
@@ -191,7 +202,9 @@ const CareerSection = () => {
               type="text"
               name="position"
               placeholder="Position Applying For"
-              className="w-full px-4 py-2 border border-gray-300 rounded focus:outline-none md:col-span-2"
+              className={`w-full px-4 py-2 border rounded focus:outline-none focus:ring-2 focus:ring-brand-red focus:border-transparent transition-all duration-200 md:col-span-2 ${
+                isDark ? "bg-gray-900 border-gray-700 text-white" : "bg-white border-gray-300"
+              }`}
               required
               onChange={handleChange}
               value={formData.position}
@@ -200,14 +213,16 @@ const CareerSection = () => {
               name="coverLetter"
               placeholder="Cover Letter (optional)"
               rows="4"
-              className="w-full px-4 py-2 border border-gray-300 rounded focus:outline-none md:col-span-2"
+              className={`w-full px-4 py-2 border rounded focus:outline-none focus:ring-2 focus:ring-brand-red focus:border-transparent transition-all duration-200 md:col-span-2 ${
+                isDark ? "bg-gray-900 border-gray-700 text-white" : "bg-white border-gray-300"
+              }`}
               onChange={handleChange}
               value={formData.coverLetter}
             ></textarea>
             <input
               type="file"
               name="resume"
-              className="md:col-span-2"
+              className="md:col-span-2 file:mr-4 file:py-2 file:px-4 file:rounded file:border-0 file:text-sm file:font-semibold file:bg-red-50 file:text-brand-red hover:file:bg-red-100"
               accept=".pdf,.doc,.docx"
               required
               onChange={handleChange}
@@ -215,7 +230,7 @@ const CareerSection = () => {
             />
             <button
               type="submit"
-              className="md:col-span-2 bg-blue-600 text-white py-2 rounded hover:bg-blue-700 transition"
+              className="md:col-span-2 bg-brand-red text-white py-2.5 rounded hover:bg-brand-red-dark transition font-semibold cursor-pointer shadow-sm"
             >
               Submit Application
             </button>
