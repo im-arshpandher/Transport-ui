@@ -1,4 +1,5 @@
-import React, { useEffect } from "react"; 
+import React, { useEffect } from "react";
+import { Helmet } from "react-helmet-async"; 
 import { motion } from "framer-motion"; 
 import Navbar from "../common/Navbar"; 
 import Footer from "../common/Footer"; 
@@ -16,6 +17,10 @@ const About = () => {
 
   return (
     <>
+      <Helmet>
+        <title>About Us | Heavy Fleet Operations | onroad</title>
+        <meta name="description" content="With over 35 years of experience, we provide reliable heavy transport solutions including flatbeds, lowbeds, pickups, and container chassis across the UAE." />
+      </Helmet>
       <Navbar />
       <section className={`pt-28 pb-20 md:pt-40 md:pb-24 ${isDark ? "bg-slate-900" : "bg-white"}`}>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -59,10 +64,10 @@ const About = () => {
                 optimization across the UAE.
               </p>
               <p className={`mt-4 text-justify leading-relaxed ${isDark ? "text-slate-300" : "text-slate-600"}`}>
-                We have <b>90+ trucks</b> readily available, including <b>pickups</b> for your service, ensuring reliability, safety, and transparency
+                We have <b>90+ trucks</b> readily available, including <b>flatbeds, lowbeds and pickups</b> for your service, ensuring reliability, safety, and transparency
                 in every shipment. Whether you're moving oversized cargo or managing complex supply
                 chains, we tailor solutions that work best for your business.
-              </p>
+              </p> 
             </motion.div>
 
             {/* Image */}

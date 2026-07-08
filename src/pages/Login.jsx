@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { Helmet } from "react-helmet-async";
 import { useDispatch } from 'react-redux';
 import { loginSuccess } from '../../redux/authSlice';
 import { useNavigate } from 'react-router-dom';
@@ -31,6 +32,10 @@ const Login = () => {
 
   return (
     <div className="min-h-screen flex items-center justify-center bg-gray-100">
+      <Helmet>
+        <title>Admin Login | onroad</title>
+        <meta name="robots" content="noindex, nofollow" />
+      </Helmet>
       <form onSubmit={handleLogin} className="bg-white p-6 rounded shadow-md w-full max-w-sm">
         <h2 className="text-2xl font-bold mb-4">Login</h2>
         <div className="mb-4">

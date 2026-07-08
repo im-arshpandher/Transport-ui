@@ -5,10 +5,10 @@ import {
   FaMapMarkedAlt,
   FaCogs,
   FaClock,
-  FaShieldAlt,
+  FaShieldAlt
 } from "react-icons/fa";
-
-import { motion } from "framer-motion"; 
+import { motion } from "framer-motion";
+import { Helmet } from "react-helmet-async";
 import Navbar from "../common/Navbar"; 
 import Footer from "../common/Footer"; 
 import { useSelector } from "react-redux"; 
@@ -66,6 +66,10 @@ const Services = () => {
 
   return (
     <>
+      <Helmet>
+        <title>Transport Services | Flatbeds, Lowbeds & Container Chassis | onroad</title>
+        <meta name="description" content="Explore our specialized transport services. Our versatile fleet of 90+ trucks offers flatbeds, lowbeds, pickups, and specialized container transport solutions." />
+      </Helmet>
       <Navbar />
       <section className={`pt-28 pb-20 md:pt-40 md:pb-24 ${isDark ? "bg-gray-800" : "bg-gray-50"}`}>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">

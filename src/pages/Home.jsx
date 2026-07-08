@@ -1,4 +1,5 @@
 import React, { useEffect } from "react";
+import { Helmet } from "react-helmet-async";
 import Navbar from "../common/Navbar";
 import Hero from "../components/Hero";
 import TrustTicker from "../components/TrustTicker";
@@ -22,6 +23,10 @@ const Home = () => {
 
   return (
     <div className="relative min-h-screen">
+      <Helmet>
+        <title>UAE Transport & Fleet Operations | onroad</title>
+        <meta name="description" content="Leading heavy equipment logistics in the UAE. Our fleet includes flatbeds, lowbeds, pickups, and specialized container chassis transport across Dubai and Abu Dhabi." />
+      </Helmet>
       <Navbar />
       <Hero />
       <TrustTicker />
