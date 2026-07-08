@@ -1,7 +1,7 @@
 import React, { useEffect } from "react";
 import Home from "./pages/Home";
 import Careers from "./pages/Careers";
-import Quote from "./pages/Quote";
+
 import Services from "./pages/Services";
 import About from "./pages/About";
 import Login from './pages/Login';
@@ -40,10 +40,7 @@ const router = createBrowserRouter([
     path: "/careers",
     element: <Careers />,
   },
-  {
-    path: "/quote",
-    element: <Quote />,
-  },
+
   {
     path: "/services",
     element: <Services />,

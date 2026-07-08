@@ -78,26 +78,32 @@ const Navbar = () => {
               ? "bg-transparent text-white/90 border-b border-white/10"
               : "bg-transparent text-slate-800 border-b border-slate-200/50"
             : isDark
-            ? "bg-slate-950 text-slate-300 border-b border-slate-900"
-            : "bg-slate-100 text-slate-600 border-b border-slate-200"
+              ? "bg-slate-950 text-slate-300 border-b border-slate-900"
+              : "bg-slate-100 text-slate-600 border-b border-slate-200"
         }`}
       >
         <div className="flex items-center gap-2">
           <FaPhoneAlt className="text-brand-blue text-xs shrink-0" />
-          <a href="tel:+971501234567" className="hover:text-brand-blue transition">
+          <a
+            href="tel:+971501234567"
+            className="hover:text-brand-blue transition"
+          >
             +971 50 123 4567
           </a>
           <span className="mx-2 text-slate-600">|</span>
           <FaEnvelope className="text-brand-blue text-xs shrink-0" />
-          <a href="mailto:hello@mashiana.com" className="hover:text-brand-blue transition">
-            hello@mashiana.com
+          <a
+            href="mailto:hello@onroad.com"
+            className="hover:text-brand-blue transition"
+          >
+            hello@onroad.com
           </a>
         </div>
         <div className="flex items-center gap-4">
           <span className="text-[10px] bg-brand-blue text-white px-2 py-0.5 rounded font-black tracking-widest uppercase">
-            GCC WIDE
+            UAE WIDE
           </span>
-          <span>FLATBED SPECIALISTS</span>
+          <span>FLATBED, LOWBED & CONTAINER SPECIALISTS</span>
         </div>
       </div>
 
@@ -107,8 +113,8 @@ const Navbar = () => {
           useTransparentStyle
             ? "bg-transparent py-5"
             : isDark
-            ? "bg-slate-900/95 backdrop-blur-md py-3 shadow-xl border-b border-slate-800"
-            : "bg-white/95 backdrop-blur-md py-3 shadow-xl border-b border-slate-200"
+              ? "bg-slate-900/95 backdrop-blur-md py-3 shadow-xl border-b border-slate-800"
+              : "bg-white/95 backdrop-blur-md py-3 shadow-xl border-b border-slate-200"
         }`}
       >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -118,7 +124,7 @@ const Navbar = () => {
               <div className="flex items-center">
                 <img
                   src="logo-removebg-preview.webp"
-                  alt="Mashiana Logo"
+                  alt="onroad Logo"
                   className={`h-10 w-auto mr-2 transition-all duration-300 ${
                     useTransparentStyle && isDark ? "brightness-0 invert" : ""
                   }`}
@@ -141,8 +147,8 @@ const Navbar = () => {
                           ? "text-white hover:text-brand-blue"
                           : "text-slate-800 hover:text-brand-blue"
                         : isDark
-                        ? "text-slate-200 hover:text-brand-blue"
-                        : "text-slate-700 hover:text-brand-blue"
+                          ? "text-slate-200 hover:text-brand-blue"
+                          : "text-slate-700 hover:text-brand-blue"
                     }`}
                   >
                     {item.name}
@@ -150,7 +156,11 @@ const Navbar = () => {
                       <motion.span
                         layoutId="nav-underline"
                         className="absolute bottom-0 left-0 w-full h-[2px] bg-brand-blue"
-                        transition={{ type: "spring", stiffness: 380, damping: 30 }}
+                        transition={{
+                          type: "spring",
+                          stiffness: 380,
+                          damping: 30,
+                        }}
                       />
                     )}
                   </Link>
@@ -163,10 +173,10 @@ const Navbar = () => {
                   dispatch(invert(!isDark));
                   localStorage.setItem("darkMode", (!isDark).toString());
                 }}
-                className={`w-9 h-9 flex items-center justify-center rounded-full transition-all duration-300 focus:outline-none shrink-0 cursor-pointer ${
+                className={`w-9 h-9 flex items-center justify-center transition-all duration-300 focus:outline-none shrink-0 cursor-pointer ${
                   isDark
-                    ? "text-yellow-400 hover:text-yellow-300 hover:bg-slate-800/50"
-                    : "border border-slate-800 text-slate-800 hover:bg-slate-100"
+                    ? "text-yellow-400 hover:text-yellow-300 hover:bg-slate-800/50 rounded-full"
+                    : "text-slate-800 hover:bg-slate-100 rounded-full"
                 }`}
                 aria-label="Toggle theme"
               >
@@ -178,7 +188,7 @@ const Navbar = () => {
               </button>
 
               {/* CONNECT WITH US Button */}
-              <Link to="/quote">
+              <a href="/#quote-section">
                 <motion.div
                   className={`px-5 py-2.5 rounded-lg border font-bold text-xs uppercase tracking-widest cursor-pointer shadow-md transition-all duration-300 ${
                     useTransparentStyle
@@ -186,15 +196,15 @@ const Navbar = () => {
                         ? "border-white bg-transparent text-white hover:bg-brand-blue hover:border-brand-blue"
                         : "border-brand-blue bg-transparent text-brand-blue hover:bg-brand-blue hover:text-white"
                       : isDark
-                      ? "border-brand-blue bg-transparent text-brand-blue hover:bg-brand-blue hover:text-white"
-                      : "border-brand-blue bg-transparent text-brand-blue hover:bg-brand-blue hover:text-white"
+                        ? "border-brand-blue bg-transparent text-brand-blue hover:bg-brand-blue hover:text-white"
+                        : "border-brand-blue bg-transparent text-brand-blue hover:bg-brand-blue hover:text-white"
                   }`}
                   whileHover={{ scale: 1.03 }}
                   whileTap={{ scale: 0.97 }}
                 >
                   Connect with us
                 </motion.div>
-              </Link>
+              </a>
             </div>
 
             {/* Mobile Menu & Theme Buttons */}
@@ -205,10 +215,10 @@ const Navbar = () => {
                   dispatch(invert(!isDark));
                   localStorage.setItem("darkMode", (!isDark).toString());
                 }}
-                className={`w-8 h-8 flex items-center justify-center rounded-full transition-all duration-300 focus:outline-none shrink-0 cursor-pointer ${
+                className={`w-8 h-8 flex items-center justify-center transition-all duration-300 focus:outline-none shrink-0 cursor-pointer ${
                   isDark
-                    ? "text-yellow-400 hover:text-yellow-300 hover:bg-slate-800/50"
-                    : "border border-slate-800 text-slate-800 hover:bg-slate-100"
+                    ? "text-yellow-400 hover:text-yellow-300 hover:bg-slate-800/50 rounded-full"
+                    : "text-slate-800 hover:bg-slate-100 rounded-full"
                 }`}
                 aria-label="Toggle theme"
               >
@@ -228,8 +238,8 @@ const Navbar = () => {
                       ? "text-white hover:bg-white/10"
                       : "text-slate-800 hover:bg-slate-950/5"
                     : isDark
-                    ? "text-slate-200 hover:bg-slate-800/50"
-                    : "text-slate-800 hover:bg-slate-100"
+                      ? "text-slate-200 hover:bg-slate-800/50"
+                      : "text-slate-800 hover:bg-slate-100"
                 }`}
                 aria-label="Open menu"
               >
@@ -271,7 +281,7 @@ const Navbar = () => {
                       <Link to="/" onClick={toggleMenu}>
                         <img
                           src="logo-removebg-preview.webp"
-                          alt="Mashiana Logo"
+                          alt="onroad Logo"
                           className={`h-9 w-auto ${isDark ? "brightness-0 invert" : ""}`}
                           style={{ maxWidth: "110px" }}
                         />
@@ -282,12 +292,15 @@ const Navbar = () => {
                         <button
                           onClick={() => {
                             dispatch(invert(!isDark));
-                            localStorage.setItem("darkMode", (!isDark).toString());
+                            localStorage.setItem(
+                              "darkMode",
+                              (!isDark).toString(),
+                            );
                           }}
-                          className={`w-8 h-8 flex items-center justify-center rounded-full transition-all duration-300 focus:outline-none shrink-0 cursor-pointer ${
+                          className={`w-8 h-8 flex items-center justify-center transition-all duration-300 focus:outline-none shrink-0 cursor-pointer ${
                             isDark
-                              ? "text-yellow-400 hover:text-yellow-300 hover:bg-slate-800/50"
-                              : "border border-slate-800 text-slate-800 hover:bg-slate-100"
+                              ? "text-yellow-400 hover:text-yellow-300 hover:bg-slate-800/50 rounded-full"
+                              : "text-slate-800 hover:bg-slate-100 rounded-full"
                           }`}
                           aria-label="Toggle theme"
                         >
@@ -325,8 +338,8 @@ const Navbar = () => {
                                   ? "bg-slate-900 text-brand-blue border-l-2 border-brand-blue"
                                   : "bg-slate-50 text-brand-blue border-l-2 border-brand-blue"
                                 : isDark
-                                ? "text-slate-200 hover:bg-slate-900/50 hover:text-brand-blue"
-                                : "text-slate-700 hover:bg-slate-50 hover:text-brand-blue"
+                                  ? "text-slate-200 hover:bg-slate-900/50 hover:text-brand-blue"
+                                  : "text-slate-700 hover:bg-slate-50 hover:text-brand-blue"
                             }`}
                             onClick={toggleMenu}
                           >
@@ -342,19 +355,19 @@ const Navbar = () => {
 
                   {/* Bottom Action CTA Button */}
                   <div className="pt-6 border-t border-slate-200 dark:border-slate-800/80">
-                    <Link
-                      to="/quote"
+                    <a
+                      href="/#quote-section"
                       className="block text-center py-3 font-extrabold uppercase tracking-widest bg-brand-blue text-white rounded-lg hover:bg-brand-blue-dark hover:scale-[1.02] active:scale-[0.98] shadow-lg transition-all duration-200"
                       onClick={toggleMenu}
                     >
                       Connect with us
-                    </Link>
+                    </a>
                   </div>
                 </motion.div>
               </>
             )}
-          </AnimatePresence>
-          , document.body
+          </AnimatePresence>,
+          document.body,
         )}
       </nav>
     </header>

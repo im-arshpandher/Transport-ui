@@ -13,7 +13,7 @@ const Hero = () => {
       <div className="absolute inset-0 z-0">
         <img
           src={isDark ? "hero_night_mobile.png" : "hero_day_mobile.png"}
-          alt="Mashiana Heavy Flatbed Transport Background"
+          alt="onroad Heavy Transport Background"
           className="w-full h-full object-cover transition-all duration-700"
           style={{ objectPosition: "15% center" }}
         />
@@ -36,9 +36,9 @@ const Hero = () => {
       </div>
 
       {/* Main Hero Container */}
-      <div className="max-w-7xl mx-auto w-full px-4 sm:px-6 lg:px-8 z-10 flex flex-col justify-center h-full pt-[80px] md:pt-[110px]">
+      <div className="max-w-7xl mx-auto w-full px-4 sm:px-6 lg:px-8 z-10 flex flex-col justify-start md:justify-center h-full pt-[120px] pb-10 md:pt-[140px]">
         <motion.div
-          className="w-full md:w-3/5 text-left flex flex-col justify-center h-full md:h-auto"
+          className="w-full md:w-3/5 text-left flex flex-col justify-start md:justify-center h-full md:h-auto"
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
@@ -46,7 +46,7 @@ const Hero = () => {
           {/* Tagline */}
           <div className="mb-4">
             <span className="text-xs md:text-sm font-extrabold tracking-widest text-brand-blue uppercase bg-brand-blue/10 px-3 py-1.5 rounded-md inline-block">
-              GCC Flatbed Operations
+              UAE Transport & Fleet Operations
             </span>
           </div>
 
@@ -56,7 +56,9 @@ const Hero = () => {
               isDark ? "text-white" : "text-slate-900"
             }`}
           >
-            You've got the <span className="text-brand-blue">Freight</span> & We have access to the <span className="text-brand-blue">Best Flats</span>.
+            You've got the <span className="text-brand-blue">Freight</span> & We
+            have access to the{" "}
+            <span className="text-brand-blue">Best Flats</span>.
           </h1>
 
           {/* Subtext description (monetransport style) */}
@@ -65,35 +67,47 @@ const Hero = () => {
               isDark ? "text-slate-300" : "text-slate-700"
             }`}
           >
-            Decades of dedicated heavy-equipment logistics. Moving large machinery, structural steel, and project cargo across Dubai, Abu Dhabi, and GCC borders with door-to-door tracking.
+            Decades of dedicated heavy-equipment logistics. Moving large
+            machinery, structural steel, and project cargo across Dubai, Abu
+            Dhabi, and UAE borders with absolute reliability.
           </p>
 
           <div className="flex flex-col gap-4 mt-8">
             {/* Features Row (Mobile Quick View) */}
             <div
               className={`flex flex-row justify-between items-center gap-2 w-full px-2 py-4 border-t border-b md:hidden ${
-                isDark ? "border-slate-800 text-white/90" : "border-slate-200 text-slate-900"
+                isDark
+                  ? "border-slate-800 text-white/90"
+                  : "border-slate-200 text-slate-900"
               }`}
             >
               <div className="flex items-center gap-2">
                 <FiMapPin className="w-5 h-5 text-brand-blue shrink-0" />
                 <div className="text-left">
-                  <p className="text-[10px] font-black leading-none uppercase tracking-wider opacity-60">Operations</p>
-                  <p className="text-xs font-black leading-tight uppercase tracking-wider mt-0.5">GCC & UAE WIDE</p>
+                  <p className="text-[10px] font-black leading-none uppercase tracking-wider opacity-60">
+                    Operations
+                  </p>
+                  <p className="text-xs font-black leading-tight uppercase tracking-wider mt-0.5">
+                    UAE WIDE
+                  </p>
                 </div>
               </div>
               <div className="flex items-center gap-2">
                 <FiClock className="w-5 h-5 text-brand-blue shrink-0" />
                 <div className="text-left">
-                  <p className="text-[10px] font-black leading-none uppercase tracking-wider opacity-60">Status</p>
-                  <p className="text-xs font-black leading-tight uppercase tracking-wider mt-0.5">REAL-TIME GPS</p>
+                  <p className="text-[10px] font-black leading-none uppercase tracking-wider opacity-60">
+                    Status
+                  </p>
+                  <p className="text-xs font-black leading-tight uppercase tracking-wider mt-0.5">
+                    24/7 SUPPORT
+                  </p>
                 </div>
               </div>
             </div>
 
             {/* CTA Buttons */}
             <div className="flex flex-row gap-4 w-full mt-2 justify-start">
-              <Link to="/quote" className="flex-1 sm:flex-initial">
+              <a href="/#quote-section" className="flex-1 sm:flex-initial">
                 <motion.div
                   className="px-6 py-3.5 bg-brand-blue text-white rounded-lg hover:bg-brand-blue-dark transition font-bold text-center shadow-lg cursor-pointer text-xs sm:text-sm uppercase tracking-wider w-full"
                   whileHover={{ scale: 1.04 }}
@@ -101,7 +115,7 @@ const Hero = () => {
                 >
                   Quote Shipment
                 </motion.div>
-              </Link>
+              </a>
               <Link to="/about" className="flex-1 sm:flex-initial">
                 <motion.div
                   className={`px-6 py-3.5 border rounded-lg transition font-bold text-center shadow-md cursor-pointer text-xs sm:text-sm uppercase tracking-wider w-full ${

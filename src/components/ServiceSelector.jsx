@@ -9,8 +9,8 @@ const ServiceSelector = () => {
 
   const services = [
     {
-      title: "Flatbed Rental & Leasing",
-      description: "Secure long-term flatbeds or immediate commercial rental to cover seasonal spikes and fleet fluctuations with zero maintenance overhead.",
+      title: "Fleet Rental & Leasing",
+      description: "Secure long-term <b>flatbeds, lowbeds, or pickups</b> or immediate commercial rental to cover seasonal spikes and fleet fluctuations with zero maintenance overhead.",
       icon: <FaTruckLoading className="text-3xl text-brand-blue shrink-0" />,
       link: "/services",
     },
@@ -21,7 +21,7 @@ const ServiceSelector = () => {
       link: "/services",
     },
     {
-      title: "GCC Freight Brokerage",
+      title: "UAE Freight Brokerage",
       description: "Access verified heavy capacity and handle complex customs clearances smoothly across Dubai, Abu Dhabi, Saudi, and Oman borders.",
       icon: <FaShieldAlt className="text-3xl text-brand-blue shrink-0" />,
       link: "/services",
@@ -40,7 +40,7 @@ const ServiceSelector = () => {
           <h2 className={`text-3xl sm:text-4xl font-extrabold tracking-tight mt-2 uppercase ${
             isDark ? "text-white" : "text-slate-900"
           }`}>
-            Specialized Flatbed Services
+            Specialized Transport Services
           </h2>
           <p className={`max-w-xl mx-auto mt-4 text-sm sm:text-base ${
             isDark ? "text-slate-400" : "text-slate-600"

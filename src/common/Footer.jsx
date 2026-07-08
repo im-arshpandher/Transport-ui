@@ -1,7 +1,14 @@
 import React from "react";
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
-import { FaFacebookF, FaLinkedinIn, FaYoutube, FaEnvelope, FaMapMarkerAlt, FaPhoneAlt } from "react-icons/fa";
+import {
+  FaFacebookF,
+  FaLinkedinIn,
+  FaYoutube,
+  FaEnvelope,
+  FaMapMarkerAlt,
+  FaPhoneAlt,
+} from "react-icons/fa";
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
@@ -10,35 +17,45 @@ const Footer = () => {
     <footer className="bg-slate-950 text-slate-400 border-t border-slate-900 pt-16 pb-8 transition-colors duration-300">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-12 mb-12">
-          
           {/* Column 1: Our Company Info */}
           <div>
             <div className="flex items-center mb-6">
               <img
                 src="/logo-removebg-preview.webp"
-                alt="Mashiana Logo"
+                alt="onroad Logo"
                 className="h-10 w-auto mr-2 brightness-0 invert"
                 style={{ maxWidth: "135px" }}
               />
             </div>
             <p className="text-sm leading-relaxed mb-6">
-              Mashiana Heavy Transport is the premier GCC-wide flatbed carrier, delivering oversized machinery, steel cargo, and project materials safely and reliably for over a decade.
+              onroad Heavy Transport is the premier UAE-wide transport carrier,
+              delivering oversized machinery, steel cargo, and project materials
+              safely and reliably for over a decade.
             </p>
             <div className="space-y-3 text-sm">
               <div className="flex items-start gap-3">
                 <FaMapMarkerAlt className="text-brand-blue text-base shrink-0 mt-0.5" />
-                <span>Mashiana Transport Yard, Industrial Area 12, Dubai, United Arab Emirates</span>
+                <span>
+                  onroad Transport Yard, Industrial Area 12, Dubai, United Arab
+                  Emirates
+                </span>
               </div>
               <div className="flex items-center gap-3">
                 <FaPhoneAlt className="text-brand-blue text-base shrink-0" />
-                <a href="tel:+971501234567" className="hover:text-white transition">
+                <a
+                  href="tel:+971501234567"
+                  className="hover:text-white transition"
+                >
                   +971 50 123 4567
                 </a>
               </div>
               <div className="flex items-center gap-3">
                 <FaEnvelope className="text-brand-blue text-base shrink-0" />
-                <a href="mailto:hello@mashiana.com" className="hover:text-white transition">
-                  hello@mashiana.com
+                <a
+                  href="mailto:hello@onroad.com"
+                  className="hover:text-white transition"
+                >
+                  hello@onroad.com
                 </a>
               </div>
             </div>
@@ -59,7 +76,7 @@ const Footer = () => {
                     Oversized Cargo Handling Regulations
                   </p>
                   <span className="text-[11px] text-slate-600 block mt-0.5">
-                    June 12, 2026 • GCC Regulations
+                    June 12, 2026 • UAE Regulations
                   </span>
                 </a>
               </li>
@@ -82,7 +99,7 @@ const Footer = () => {
                   className="hover:text-white transition block group"
                 >
                   <p className="group-hover:text-brand-blue font-semibold transition text-slate-300">
-                    Why Flatbed Specialization Matters
+                    Why Fleet Specialization Matters
                   </p>
                   <span className="text-[11px] text-slate-600 block mt-0.5">
                     April 19, 2026 • Freight Brokerage
@@ -98,14 +115,15 @@ const Footer = () => {
               Let's Get Social
             </h4>
             <p className="text-sm leading-relaxed mb-6">
-              Stay updated with real-time fleet availability, job openings, and project updates across our UAE terminals.
+              Stay updated with real-time fleet availability, job openings, and
+              project updates across our UAE terminals.
             </p>
             <div className="flex flex-wrap gap-3">
               {[
                 { icon: <FaFacebookF />, url: "https://facebook.com" },
                 { icon: <FaLinkedinIn />, url: "https://linkedin.com" },
                 { icon: <FaYoutube />, url: "https://youtube.com" },
-                { icon: <FaEnvelope />, url: "mailto:hello@mashiana.com" },
+                { icon: <FaEnvelope />, url: "mailto:hello@onroad.com" },
               ].map((social, index) => (
                 <a
                   key={index}
@@ -127,17 +145,16 @@ const Footer = () => {
                 Our Services
               </Link>
               <span className="text-slate-800">•</span>
-              <Link to="/quote" className="hover:text-brand-blue transition">
+              <a href="/#quote-section" className="hover:text-brand-blue transition">
                 Freight Quote
-              </Link>
+              </a>
             </div>
           </div>
-
         </div>
 
         {/* Footer Bottom Block */}
         <div className="border-t border-slate-900 pt-8 mt-8 flex flex-col md:flex-row items-center justify-between text-xs text-slate-500 font-semibold tracking-wider">
-          <p>© {currentYear} Mashiana Heavy Transport. All Rights Reserved.</p>
+          <p>© {currentYear} onroad Heavy Transport. All Rights Reserved.</p>
           <div className="flex gap-4 mt-4 md:mt-0">
             <a href="#" className="hover:text-brand-blue transition">
               Terms & Conditions

@@ -10,7 +10,14 @@ import Footer from "../common/Footer";
 
 const Home = () => {
   useEffect(() => {
-    scrollTo(0, 0);
+    if (window.location.hash) {
+      const element = document.querySelector(window.location.hash);
+      if (element) {
+        element.scrollIntoView({ behavior: "smooth" });
+      }
+    } else {
+      window.scrollTo(0, 0);
+    }
   }, []);
 
   return (

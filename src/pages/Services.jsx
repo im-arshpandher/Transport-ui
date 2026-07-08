@@ -15,40 +15,43 @@ import { useSelector } from "react-redux";
 
 const services = [
   {
-    title: "Flatbed Trucking",
-    icon: <FaTruckMoving className="text-4xl text-brand-blue" />,
-    description:
-      "Exclusive flatbed transportation for oversized, heavy, or irregular cargo with full compliance and safety.",
+    title: "Flatbeds, lowbeds & Pickups",
+    icon: <FaTruckMoving className="text-3xl text-brand-blue shrink-0" />,
+    description: (
+      <>
+        Versatile transport using <b>flatbeds, lowbeds, and pickups</b>. Backed by a fleet of <b>90+ trucks</b>, we handle cargo of any scale with uncompromising safety.
+      </>
+    ),
   },
   {
     title: "Project Cargo Transport",
-    icon: <FaShippingFast className="text-4xl text-brand-blue" />,
+    icon: <FaShippingFast className="text-3xl text-brand-blue shrink-0" />,
     description:
-      "Special handling for large-scale industrial and construction equipment, delivered directly to site.",
+      "End-to-end management for oversized and complex industrial equipment. We deliver massive structural payloads directly to site, on schedule.",
   },
   {
     title: "Route Planning & Optimization",
-    icon: <FaMapMarkedAlt className="text-4xl text-brand-blue" />,
+    icon: <FaMapMarkedAlt className="text-3xl text-brand-blue shrink-0" />,
     description:
-      "Strategic route planning across the UAE to minimize delays, avoid restrictions, and reduce costs.",
+      "Intelligent logistics planning to minimize transit times, navigate infrastructure constraints, and significantly reduce operational costs.",
   },
   {
     title: "Secure Loading & Lashing",
-    icon: <FaShieldAlt className="text-4xl text-brand-blue" />,
+    icon: <FaShieldAlt className="text-3xl text-brand-blue shrink-0" />,
     description:
-      "Expert team ensures safe lashing, tarping, and load securing — critical for road compliance.",
+      "Certified loading operations using industry-leading lashing and binding techniques to ensure absolute road compliance and load stability.",
   },
   {
-  title: "24/7 Transport Support",
-  icon: <FaClock className="text-4xl text-brand-blue" />,
-  description:
-    "Round-the-clock assistance to ensure smooth coordination, timely updates, and quick issue resolution during transit.",
-},
-  {
-    title: "Custom Solutions for Heavy Industries",
-    icon: <FaCogs className="text-4xl text-brand-blue" />,
+    title: "24/7 Transport Support",
+    icon: <FaClock className="text-3xl text-brand-blue shrink-0" />,
     description:
-      "Tailored transport services for manufacturing, energy, construction, and infrastructure sectors.",
+      "Round-the-clock dispatch assistance. We provide real-time coordination and rapid issue resolution to keep your supply chain moving seamlessly.",
+  },
+  {
+    title: "Custom Industry Solutions",
+    icon: <FaCogs className="text-3xl text-brand-blue shrink-0" />,
+    description:
+      "Bespoke logistics frameworks tailored for energy, manufacturing, and construction. Scalable transport operations adapting to your specific needs.",
   },
 ];
 
@@ -81,10 +84,10 @@ const Services = () => {
                 isDark ? "text-white" : "text-slate-900"
               }`}
             >
-              Specialized GCC Flatbed Services
+              <b>Specialized UAE Transport & Logistics Fleet</b>
             </h1>
             <p className={`mt-4 text-sm sm:text-base max-w-2xl mx-auto text-center ${isDark ? "text-slate-300" : "text-slate-600"}`}>
-              We provide a comprehensive range of logistics and heavy transport solutions tailored to the unique requirements of heavy industries.
+              We provide a comprehensive range of logistics and transport solutions tailored to the unique requirements of your business. Our fleet includes <b>flatbeds, lowbeds, pickups, and specialized chassis for container transport</b>, with <b>90+ trucks</b> readily available.
             </p>
           </motion.div>
 
@@ -93,20 +96,33 @@ const Services = () => {
             {services.map((service, index) => (
               <motion.div
                 key={index}
-                className={`p-8 rounded-xl shadow-md border border-t-4 border-t-brand-blue hover:shadow-xl hover:-translate-y-1.5 transition-all duration-300 ${
+                className={`p-8 rounded-xl shadow-md border flex flex-col justify-between transition-all duration-300 relative group overflow-hidden ${
                   isDark
-                    ? "bg-slate-900 border-slate-800 text-white"
-                    : "bg-white border-slate-200/60 text-slate-800"
+                    ? "bg-slate-950 border-slate-800 hover:border-brand-blue text-white"
+                    : "bg-white border-slate-200 hover:border-brand-blue text-slate-800"
                 }`}
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
                 transition={{ duration: 0.5, delay: index * 0.1 }}
+                whileHover={{ y: -6 }}
               >
-                <div className="flex justify-center mb-6">{service.icon}</div>
-                <h3 className="text-xl font-black uppercase tracking-tight text-center mb-3">{service.title}</h3>
-                <p className={`text-justify leading-relaxed text-sm ${isDark ? "text-slate-300" : "text-slate-600"}`}>
-                  {service.description}
-                </p>
+                <div>
+                  <div className="mb-6 inline-flex p-3 rounded-lg bg-brand-blue/5">
+                    {service.icon}
+                  </div>
+                  <h3 className={`text-xl font-bold uppercase tracking-wide mb-3 ${
+                    isDark ? "text-white" : "text-slate-900"
+                  }`}>
+                    {service.title}
+                  </h3>
+                  <p className={`text-sm leading-relaxed text-left ${isDark ? "text-slate-400" : "text-slate-600"}`}>
+                    {service.description}
+                  </p>
+                </div>
+                
+                {/* Crimson Accent hover strip */}
+                <div className="absolute bottom-0 left-0 w-full h-[3px] bg-brand-blue transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left" />
               </motion.div>
             ))}
           </div>

@@ -60,7 +60,10 @@ const CareerSection = () => {
     const schema = z.object({
       name: z.string().trim().min(2, "Name must be at least 2 characters"),
       email: z.string().trim().email("Invalid email address"),
-      position: z.string().trim().min(2, "Position must be at least 2 characters"),
+      position: z
+        .string()
+        .trim()
+        .min(2, "Position must be at least 2 characters"),
       coverLetter: z.string().optional(),
       resume: z.instanceof(File),
     });
@@ -124,50 +127,20 @@ const CareerSection = () => {
               isDark ? "text-white" : "text-slate-900"
             }`}
           >
-            Join The Mashiana Logistics Team
+            Join The onroad Logistics Team
           </h1>
-          <p className={`mt-4 text-sm sm:text-base max-w-2xl mx-auto text-center ${isDark ? "text-slate-300" : "text-slate-600"}`}>
-            Be part of a dynamic logistics and heavy transport leader in the UAE. We offer competitive growth and professional career paths.
+          <p
+            className={`mt-4 text-sm sm:text-base max-w-2xl mx-auto text-center ${isDark ? "text-slate-300" : "text-slate-600"}`}
+          >
+            Be part of a dynamic logistics and heavy transport leader in the
+            UAE. We offer competitive growth and professional career paths.
           </p>
-        </motion.div>
-
-        {/* Job Listings */}
-        <motion.div
-          className="grid grid-cols-1 md:grid-cols-2 gap-8"
-          initial="hidden"
-          animate="visible"
-          variants={{
-            hidden: { opacity: 0 },
-            visible: { opacity: 1, transition: { staggerChildren: 0.2 } },
-          }}
-        >
-          {jobList.map((job, idx) => (
-            <motion.div
-              key={idx}
-              className={`p-6 border border-l-4 border-l-brand-blue rounded-xl shadow-md hover:shadow-xl hover:-translate-y-1 transition-all duration-300 
-                ${isDark ? "bg-slate-900 border-slate-800 text-white" : "bg-white border-slate-200 text-slate-800"}`}
-              variants={fadeIn}
-              transition={{ duration: 0.5 }}
-            >
-              <h3 className="text-lg font-black uppercase tracking-tight">{job.title}</h3>
-              <p className={`text-xs font-semibold mt-1 uppercase tracking-wider text-brand-blue`}>
-                {job.location} • {job.type}
-              </p>
-              <p className={`mt-4 text-sm text-justify leading-relaxed ${isDark ? "text-slate-300" : "text-slate-600"}`}>{job.description}</p>
-              <a
-                href="#apply"
-                className="inline-block mt-4 text-brand-blue hover:text-brand-blue-dark font-extrabold uppercase text-xs tracking-wider transition-colors"
-              >
-                Apply Now →
-              </a>
-            </motion.div>
-          ))}
         </motion.div>
 
         {/* Application Section */}
         <motion.div
           id="apply"
-          className={`mt-20 p-4 sm:p-8 rounded-lg shadow-md 
+          className={`p-4 sm:p-8 rounded-lg shadow-md 
             ${isDark ? "bg-gray-800 text-white" : "bg-gray-50"}`}
           variants={fadeIn}
           transition={{ duration: 0.5 }}
@@ -175,13 +148,18 @@ const CareerSection = () => {
           <h3 className="text-2xl font-semibold mb-6 text-center">
             Submit Your Resume
           </h3>
-          <form className="grid grid-cols-1 md:grid-cols-2 gap-6" onSubmit={handleSubmit}>
+          <form
+            className="grid grid-cols-1 md:grid-cols-2 gap-6"
+            onSubmit={handleSubmit}
+          >
             <input
               type="text"
               name="name"
               placeholder="Full Name"
-              className={`w-full px-4 py-2 border rounded focus:outline-none focus:ring-2 focus:ring-brand-blue focus:border-transparent transition-all duration-200 ${
-                isDark ? "bg-gray-900 border-gray-700 text-white" : "bg-white border-gray-300"
+              className={`w-full py-3 bg-transparent border-b focus:outline-none transition-all duration-300 text-sm ${
+                isDark
+                  ? "border-slate-800 focus:border-brand-blue text-white placeholder-slate-600"
+                  : "border-slate-300 focus:border-brand-blue text-slate-800 placeholder-slate-400"
               }`}
               required
               onChange={handleChange}
@@ -191,30 +169,46 @@ const CareerSection = () => {
               type="email"
               name="email"
               placeholder="Email Address"
-              className={`w-full px-4 py-2 border rounded focus:outline-none focus:ring-2 focus:ring-brand-blue focus:border-transparent transition-all duration-200 ${
-                isDark ? "bg-gray-900 border-gray-700 text-white" : "bg-white border-gray-300"
+              className={`w-full py-3 bg-transparent border-b focus:outline-none transition-all duration-300 text-sm ${
+                isDark
+                  ? "border-slate-800 focus:border-brand-blue text-white placeholder-slate-600"
+                  : "border-slate-300 focus:border-brand-blue text-slate-800 placeholder-slate-400"
               }`}
               required
               onChange={handleChange}
               value={formData.email}
             />
-            <input
-              type="text"
+            <select
               name="position"
-              placeholder="Position Applying For"
-              className={`w-full px-4 py-2 border rounded focus:outline-none focus:ring-2 focus:ring-brand-blue focus:border-transparent transition-all duration-200 md:col-span-2 ${
-                isDark ? "bg-gray-900 border-gray-700 text-white" : "bg-white border-gray-300"
-              }`}
+              className={`w-full py-3 bg-transparent border-b focus:outline-none transition-all duration-300 text-sm md:col-span-2 ${
+                isDark
+                  ? "border-slate-800 focus:border-brand-blue text-white"
+                  : "border-slate-300 focus:border-brand-blue text-slate-800"
+              } ${!formData.position ? (isDark ? "text-slate-600" : "text-slate-400") : ""}`}
               required
               onChange={handleChange}
               value={formData.position}
-            />
+            >
+              <option value="" disabled hidden>
+                Position Applying For
+              </option>
+              {jobList.map((job, idx) => (
+                <option key={idx} value={job.title} className={isDark ? "bg-gray-900 text-white" : "bg-white text-slate-900"}>
+                  {job.title}
+                </option>
+              ))}
+              <option value="Other" className={isDark ? "bg-gray-900 text-white" : "bg-white text-slate-900"}>
+                Other
+              </option>
+            </select>
             <textarea
               name="coverLetter"
               placeholder="Cover Letter (optional)"
               rows="4"
-              className={`w-full px-4 py-2 border rounded focus:outline-none focus:ring-2 focus:ring-brand-blue focus:border-transparent transition-all duration-200 md:col-span-2 ${
-                isDark ? "bg-gray-900 border-gray-700 text-white" : "bg-white border-gray-300"
+              className={`w-full py-3 bg-transparent border-b focus:outline-none transition-all duration-300 text-sm md:col-span-2 ${
+                isDark
+                  ? "border-slate-800 focus:border-brand-blue text-white placeholder-slate-600"
+                  : "border-slate-300 focus:border-brand-blue text-slate-800 placeholder-slate-400"
               }`}
               onChange={handleChange}
               value={formData.coverLetter}
@@ -230,7 +224,7 @@ const CareerSection = () => {
             />
             <button
               type="submit"
-              className="md:col-span-2 bg-brand-blue text-white py-2.5 rounded hover:bg-brand-blue-dark transition font-semibold cursor-pointer shadow-sm"
+              className="md:col-span-2 w-full bg-brand-blue text-white font-bold py-3 px-6 uppercase tracking-widest hover:bg-brand-blue-dark active:bg-brand-blue transition-colors shadow-md cursor-pointer"
             >
               Submit Application
             </button>

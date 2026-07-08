@@ -1,16 +1,17 @@
 import React from "react";
 import { useSelector } from "react-redux";
-import { FaShieldAlt, FaMapMarkedAlt, FaAward, FaBuilding, FaHandshake } from "react-icons/fa";
+import { FaShieldAlt, FaMapMarkedAlt, FaAward, FaBuilding, FaHandshake, FaTruck, FaHistory } from "react-icons/fa";
 
 const TrustTicker = () => {
   const isDark = useSelector((state) => state.darkMode.value);
 
   const partners = [
-    { name: "GCC Customs Approved", icon: <FaBuilding className="text-xl mr-2 shrink-0" /> },
-    { name: "Samsara Telematics", icon: <FaMapMarkedAlt className="text-xl mr-2 shrink-0" /> },
+    { name: "UAE Customs Approved", icon: <FaBuilding className="text-xl mr-2 shrink-0" /> },
+    // { name: "Samsara Telematics", icon: <FaMapMarkedAlt className="text-xl mr-2 shrink-0" /> },
     { name: "Safe Transport Alliance", icon: <FaShieldAlt className="text-xl mr-2 shrink-0" /> },
+    { name: "90+ trucks available", icon: <FaTruck className="text-xl mr-2 shrink-0" /> },
     { name: "ISO 9001 Logistics", icon: <FaAward className="text-xl mr-2 shrink-0" /> },
-    { name: "Dubai Chamber Partner", icon: <FaHandshake className="text-xl mr-2 shrink-0" /> },
+    { name: "35 years+ industry experience", icon: <FaHistory className="text-xl mr-2 shrink-0" /> },
   ];
 
   // Duplicate list to achieve seamless infinite scroll loops

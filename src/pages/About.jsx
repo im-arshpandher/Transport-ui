@@ -34,10 +34,10 @@ const About = () => {
                 isDark ? "text-white" : "text-slate-900"
               }`}
             >
-              Decades of Heavy Flatbed Logistics
+              Decades of Specialized Transport & Logistics
             </h1>
             <p className={`mt-4 text-sm sm:text-base max-w-2xl mx-auto text-center ${isDark ? "text-slate-300" : "text-slate-600"}`}>
-              A trusted logistics and heavy transport partner in the UAE, committed to safe, timely, and compliant cargo movement across the GCC borders.
+              A trusted logistics and heavy transport partner in the UAE, committed to safe, timely, and compliant cargo movement across the UAE borders.
             </p>
           </motion.div>
 
@@ -54,14 +54,13 @@ const About = () => {
                 Operational Excellence
               </h3>
               <p className={`mt-4 text-justify leading-relaxed ${isDark ? "text-slate-300" : "text-slate-600"}`}>
-                With over a decade of experience, we specialize in heavy
+                While this is a new venture started in <b>2023</b>, our core team brings over <b>35+ years</b> of experience in the industry. We specialize in heavy
                 equipment transport, freight logistics, warehousing, and route
-                optimization across the GCC. Our team of professionals and fleet
-                of modern vehicles ensure reliability, safety, and transparency
-                in every shipment.
+                optimization across the UAE.
               </p>
               <p className={`mt-4 text-justify leading-relaxed ${isDark ? "text-slate-300" : "text-slate-600"}`}>
-                Whether you're moving oversized cargo or managing complex supply
+                We have <b>90+ trucks</b> readily available, including <b>pickups</b> for your service, ensuring reliability, safety, and transparency
+                in every shipment. Whether you're moving oversized cargo or managing complex supply
                 chains, we tailor solutions that work best for your business.
               </p>
             </motion.div>
