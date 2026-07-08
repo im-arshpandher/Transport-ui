@@ -26,17 +26,17 @@ const Footer = () => {
             </p>
             <div className="space-y-3 text-sm">
               <div className="flex items-start gap-3">
-                <FaMapMarkerAlt className="text-brand-red text-base shrink-0 mt-0.5" />
+                <FaMapMarkerAlt className="text-brand-blue text-base shrink-0 mt-0.5" />
                 <span>Mashiana Transport Yard, Industrial Area 12, Dubai, United Arab Emirates</span>
               </div>
               <div className="flex items-center gap-3">
-                <FaPhoneAlt className="text-brand-red text-base shrink-0" />
+                <FaPhoneAlt className="text-brand-blue text-base shrink-0" />
                 <a href="tel:+971501234567" className="hover:text-white transition">
                   +971 50 123 4567
                 </a>
               </div>
               <div className="flex items-center gap-3">
-                <FaEnvelope className="text-brand-red text-base shrink-0" />
+                <FaEnvelope className="text-brand-blue text-base shrink-0" />
                 <a href="mailto:hello@mashiana.com" className="hover:text-white transition">
                   hello@mashiana.com
                 </a>
@@ -46,7 +46,7 @@ const Footer = () => {
 
           {/* Column 2: Logistics Insights (Mock Blog Links) */}
           <div>
-            <h4 className="text-white font-bold text-sm uppercase tracking-widest mb-6 relative after:content-[''] after:absolute after:bottom-[-8px] after:left-0 after:w-8 after:h-[2px] after:bg-brand-red">
+            <h4 className="text-white font-bold text-sm uppercase tracking-widest mb-6 relative after:content-[''] after:absolute after:bottom-[-8px] after:left-0 after:w-8 after:h-[2px] after:bg-brand-blue">
               Logistics Insights
             </h4>
             <ul className="space-y-4 text-sm">
@@ -55,7 +55,7 @@ const Footer = () => {
                   href="/services"
                   className="hover:text-white transition block group"
                 >
-                  <p className="group-hover:text-brand-red font-semibold transition text-slate-300">
+                  <p className="group-hover:text-brand-blue font-semibold transition text-slate-300">
                     Oversized Cargo Handling Regulations
                   </p>
                   <span className="text-[11px] text-slate-600 block mt-0.5">
@@ -68,7 +68,7 @@ const Footer = () => {
                   href="/services"
                   className="hover:text-white transition block group"
                 >
-                  <p className="group-hover:text-brand-red font-semibold transition text-slate-300">
+                  <p className="group-hover:text-brand-blue font-semibold transition text-slate-300">
                     Samsara GPS Integration: Enhancing Cargo Safety
                   </p>
                   <span className="text-[11px] text-slate-600 block mt-0.5">
@@ -81,7 +81,7 @@ const Footer = () => {
                   href="/services"
                   className="hover:text-white transition block group"
                 >
-                  <p className="group-hover:text-brand-red font-semibold transition text-slate-300">
+                  <p className="group-hover:text-brand-blue font-semibold transition text-slate-300">
                     Why Flatbed Specialization Matters
                   </p>
                   <span className="text-[11px] text-slate-600 block mt-0.5">
@@ -94,7 +94,7 @@ const Footer = () => {
 
           {/* Column 3: Let's Get Social */}
           <div>
-            <h4 className="text-white font-bold text-sm uppercase tracking-widest mb-6 relative after:content-[''] after:absolute after:bottom-[-8px] after:left-0 after:w-8 after:h-[2px] after:bg-brand-red">
+            <h4 className="text-white font-bold text-sm uppercase tracking-widest mb-6 relative after:content-[''] after:absolute after:bottom-[-8px] after:left-0 after:w-8 after:h-[2px] after:bg-brand-blue">
               Let's Get Social
             </h4>
             <p className="text-sm leading-relaxed mb-6">
@@ -112,22 +112,22 @@ const Footer = () => {
                   href={social.url}
                   target="_blank"
                   rel="noreferrer"
-                  className="w-10 h-10 rounded-full bg-slate-900 border border-slate-800 flex items-center justify-center text-slate-400 hover:bg-brand-red hover:text-white hover:border-brand-red hover:scale-105 transition-all duration-300 shadow"
+                  className="w-10 h-10 rounded-full bg-slate-900 border border-slate-800 flex items-center justify-center text-slate-400 hover:bg-brand-blue hover:text-white hover:border-brand-blue hover:scale-105 transition-all duration-300 shadow"
                 >
                   {social.icon}
                 </a>
               ))}
             </div>
             <div className="mt-6 flex flex-wrap gap-4 text-xs font-bold uppercase tracking-wider">
-              <Link to="/about" className="hover:text-brand-red transition">
+              <Link to="/about" className="hover:text-brand-blue transition">
                 About Us
               </Link>
               <span className="text-slate-800">•</span>
-              <Link to="/services" className="hover:text-brand-red transition">
+              <Link to="/services" className="hover:text-brand-blue transition">
                 Our Services
               </Link>
               <span className="text-slate-800">•</span>
-              <Link to="/quote" className="hover:text-brand-red transition">
+              <Link to="/quote" className="hover:text-brand-blue transition">
                 Freight Quote
               </Link>
             </div>
@@ -139,11 +139,11 @@ const Footer = () => {
         <div className="border-t border-slate-900 pt-8 mt-8 flex flex-col md:flex-row items-center justify-between text-xs text-slate-500 font-semibold tracking-wider">
           <p>© {currentYear} Mashiana Heavy Transport. All Rights Reserved.</p>
           <div className="flex gap-4 mt-4 md:mt-0">
-            <a href="#" className="hover:text-brand-red transition">
+            <a href="#" className="hover:text-brand-blue transition">
               Terms & Conditions
             </a>
             <span>•</span>
-            <a href="#" className="hover:text-brand-red transition">
+            <a href="#" className="hover:text-brand-blue transition">
               Privacy Policy
             </a>
           </div>

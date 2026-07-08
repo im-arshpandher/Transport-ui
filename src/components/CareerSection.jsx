@@ -116,7 +116,7 @@ const CareerSection = () => {
           variants={fadeIn}
           transition={{ duration: 0.6 }}
         >
-          <span className="text-xs md:text-sm font-extrabold tracking-widest text-brand-red uppercase bg-brand-red/10 px-3 py-1.5 rounded-md inline-block mb-4">
+          <span className="text-xs md:text-sm font-extrabold tracking-widest text-brand-blue uppercase bg-brand-blue/10 px-3 py-1.5 rounded-md inline-block mb-4">
             Work With The Best
           </span>
           <h1
@@ -144,19 +144,19 @@ const CareerSection = () => {
           {jobList.map((job, idx) => (
             <motion.div
               key={idx}
-              className={`p-6 border border-l-4 border-l-brand-red rounded-xl shadow-md hover:shadow-xl hover:-translate-y-1 transition-all duration-300 
+              className={`p-6 border border-l-4 border-l-brand-blue rounded-xl shadow-md hover:shadow-xl hover:-translate-y-1 transition-all duration-300 
                 ${isDark ? "bg-slate-900 border-slate-800 text-white" : "bg-white border-slate-200 text-slate-800"}`}
               variants={fadeIn}
               transition={{ duration: 0.5 }}
             >
               <h3 className="text-lg font-black uppercase tracking-tight">{job.title}</h3>
-              <p className={`text-xs font-semibold mt-1 uppercase tracking-wider text-brand-red`}>
+              <p className={`text-xs font-semibold mt-1 uppercase tracking-wider text-brand-blue`}>
                 {job.location} • {job.type}
               </p>
               <p className={`mt-4 text-sm text-justify leading-relaxed ${isDark ? "text-slate-300" : "text-slate-600"}`}>{job.description}</p>
               <a
                 href="#apply"
-                className="inline-block mt-4 text-brand-red hover:text-brand-red-dark font-extrabold uppercase text-xs tracking-wider transition-colors"
+                className="inline-block mt-4 text-brand-blue hover:text-brand-blue-dark font-extrabold uppercase text-xs tracking-wider transition-colors"
               >
                 Apply Now →
               </a>
@@ -180,7 +180,7 @@ const CareerSection = () => {
               type="text"
               name="name"
               placeholder="Full Name"
-              className={`w-full px-4 py-2 border rounded focus:outline-none focus:ring-2 focus:ring-brand-red focus:border-transparent transition-all duration-200 ${
+              className={`w-full px-4 py-2 border rounded focus:outline-none focus:ring-2 focus:ring-brand-blue focus:border-transparent transition-all duration-200 ${
                 isDark ? "bg-gray-900 border-gray-700 text-white" : "bg-white border-gray-300"
               }`}
               required
@@ -191,7 +191,7 @@ const CareerSection = () => {
               type="email"
               name="email"
               placeholder="Email Address"
-              className={`w-full px-4 py-2 border rounded focus:outline-none focus:ring-2 focus:ring-brand-red focus:border-transparent transition-all duration-200 ${
+              className={`w-full px-4 py-2 border rounded focus:outline-none focus:ring-2 focus:ring-brand-blue focus:border-transparent transition-all duration-200 ${
                 isDark ? "bg-gray-900 border-gray-700 text-white" : "bg-white border-gray-300"
               }`}
               required
@@ -202,7 +202,7 @@ const CareerSection = () => {
               type="text"
               name="position"
               placeholder="Position Applying For"
-              className={`w-full px-4 py-2 border rounded focus:outline-none focus:ring-2 focus:ring-brand-red focus:border-transparent transition-all duration-200 md:col-span-2 ${
+              className={`w-full px-4 py-2 border rounded focus:outline-none focus:ring-2 focus:ring-brand-blue focus:border-transparent transition-all duration-200 md:col-span-2 ${
                 isDark ? "bg-gray-900 border-gray-700 text-white" : "bg-white border-gray-300"
               }`}
               required
@@ -213,7 +213,7 @@ const CareerSection = () => {
               name="coverLetter"
               placeholder="Cover Letter (optional)"
               rows="4"
-              className={`w-full px-4 py-2 border rounded focus:outline-none focus:ring-2 focus:ring-brand-red focus:border-transparent transition-all duration-200 md:col-span-2 ${
+              className={`w-full px-4 py-2 border rounded focus:outline-none focus:ring-2 focus:ring-brand-blue focus:border-transparent transition-all duration-200 md:col-span-2 ${
                 isDark ? "bg-gray-900 border-gray-700 text-white" : "bg-white border-gray-300"
               }`}
               onChange={handleChange}
@@ -222,7 +222,7 @@ const CareerSection = () => {
             <input
               type="file"
               name="resume"
-              className="md:col-span-2 file:mr-4 file:py-2 file:px-4 file:rounded file:border-0 file:text-sm file:font-semibold file:bg-red-50 file:text-brand-red hover:file:bg-red-100"
+              className="md:col-span-2 file:mr-4 file:py-2 file:px-4 file:rounded file:border-0 file:text-sm file:font-semibold file:bg-blue-50 file:text-brand-blue hover:file:bg-blue-100"
               accept=".pdf,.doc,.docx"
               required
               onChange={handleChange}
@@ -230,7 +230,7 @@ const CareerSection = () => {
             />
             <button
               type="submit"
-              className="md:col-span-2 bg-brand-red text-white py-2.5 rounded hover:bg-brand-red-dark transition font-semibold cursor-pointer shadow-sm"
+              className="md:col-span-2 bg-brand-blue text-white py-2.5 rounded hover:bg-brand-blue-dark transition font-semibold cursor-pointer shadow-sm"
             >
               Submit Application
             </button>

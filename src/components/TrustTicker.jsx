@@ -26,7 +26,7 @@ const TrustTicker = () => {
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row items-center gap-6 overflow-hidden">
         {/* Title */}
-        <div className="shrink-0 text-xs font-black uppercase tracking-widest text-brand-red md:border-r border-slate-800 pr-6 select-none">
+        <div className="shrink-0 text-xs font-black uppercase tracking-widest text-brand-blue md:border-r border-slate-800 pr-6 select-none">
           Trusted & Certified
         </div>
 
@@ -36,7 +36,7 @@ const TrustTicker = () => {
             {doublePartners.map((partner, idx) => (
               <div
                 key={idx}
-                className="flex items-center text-sm font-semibold tracking-wide text-slate-400 dark:text-slate-500 hover:text-brand-red dark:hover:text-brand-red transition duration-300"
+                className="flex items-center text-sm font-semibold tracking-wide text-slate-400 dark:text-slate-500 hover:text-brand-blue dark:hover:text-brand-blue transition duration-300"
               >
                 {partner.icon}
                 <span>{partner.name}</span>

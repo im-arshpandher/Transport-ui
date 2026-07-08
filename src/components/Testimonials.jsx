@@ -39,7 +39,7 @@ const Testimonials = () => {
         
         {/* Header Block */}
         <div className="text-center mb-16">
-          <span className="text-xs font-extrabold uppercase tracking-widest text-brand-red">
+          <span className="text-xs font-extrabold uppercase tracking-widest text-brand-blue">
             Client Success
           </span>
           <h2
@@ -83,8 +83,8 @@ const Testimonials = () => {
                 <div
                   className={`p-8 rounded-xl shadow-md border flex flex-col justify-between transition-all duration-300 w-full relative ${
                     isDark
-                      ? 'bg-slate-950 border-slate-800 hover:border-brand-red text-white'
-                      : 'bg-white border-slate-200 hover:border-brand-red text-slate-800'
+                      ? 'bg-slate-950 border-slate-800 hover:border-brand-blue text-white'
+                      : 'bg-white border-slate-200 hover:border-brand-blue text-slate-800'
                   }`}
                 >
                   {/* Top Portion: Quote Icon, Testimonial and Rating */}
@@ -96,7 +96,7 @@ const Testimonials = () => {
                       ))}
                     </div>
 
-                    <FaQuoteLeft className="text-brand-red text-2xl opacity-20 mb-4" />
+                    <FaQuoteLeft className="text-brand-blue text-2xl opacity-20 mb-4" />
 
                     <p className={`text-sm leading-relaxed italic ${isDark ? 'text-slate-300' : 'text-slate-600'}`}>
                       “{item.testimonial}”

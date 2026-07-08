@@ -96,7 +96,7 @@ const Quote = () => {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
           >
-            <span className="text-xs md:text-sm font-extrabold tracking-widest text-brand-red uppercase bg-brand-red/10 px-3 py-1.5 rounded-md inline-block mb-4">
+            <span className="text-xs md:text-sm font-extrabold tracking-widest text-brand-blue uppercase bg-brand-blue/10 px-3 py-1.5 rounded-md inline-block mb-4">
               Request A Quote
             </span>
             <h1
@@ -130,7 +130,7 @@ const Quote = () => {
                 onChange={handleChange}
                 placeholder="Full Name"
                 required
-                className={`px-4 py-2 border rounded focus:outline-none focus:ring-2 focus:ring-brand-red focus:border-transparent transition-all duration-200 ${
+                className={`px-4 py-2 border rounded focus:outline-none focus:ring-2 focus:ring-brand-blue focus:border-transparent transition-all duration-200 ${
                   isDark ? "bg-gray-800 border-gray-600 text-white" : "bg-white border-gray-300"
                 }`}
               />
@@ -141,7 +141,7 @@ const Quote = () => {
                 onChange={handleChange}
                 placeholder="Email Address"
                 required
-                className={`px-4 py-2 border rounded focus:outline-none focus:ring-2 focus:ring-brand-red focus:border-transparent transition-all duration-200 ${
+                className={`px-4 py-2 border rounded focus:outline-none focus:ring-2 focus:ring-brand-blue focus:border-transparent transition-all duration-200 ${
                   isDark ? "bg-gray-800 border-gray-600 text-white" : "bg-white border-gray-300"
                 }`}
               />
@@ -151,7 +151,7 @@ const Quote = () => {
                 value={formData.phoneNumber}
                 onChange={handleChange}
                 placeholder="Phone Number"
-                className={`px-4 py-2 border rounded focus:outline-none focus:ring-2 focus:ring-brand-red focus:border-transparent transition-all duration-200 ${
+                className={`px-4 py-2 border rounded focus:outline-none focus:ring-2 focus:ring-brand-blue focus:border-transparent transition-all duration-200 ${
                   isDark ? "bg-gray-800 border-gray-600 text-white" : "bg-white border-gray-300"
                 }`}
               />
@@ -160,7 +160,7 @@ const Quote = () => {
                 value={formData.serviceType}
                 onChange={handleChange}
                 required
-                className={`px-4 py-2 border rounded focus:outline-none focus:ring-2 focus:ring-brand-red focus:border-transparent transition-all duration-200 ${
+                className={`px-4 py-2 border rounded focus:outline-none focus:ring-2 focus:ring-brand-blue focus:border-transparent transition-all duration-200 ${
                   isDark ? "bg-gray-800 border-gray-600 text-white" : "bg-white border-gray-300"
                 }`}
               >
@@ -187,7 +187,7 @@ const Quote = () => {
                 onChange={handleChange}
                 placeholder="Pickup Location"
                 required
-                className={`px-4 py-2 border rounded focus:outline-none focus:ring-2 focus:ring-brand-red focus:border-transparent transition-all duration-200 ${
+                className={`px-4 py-2 border rounded focus:outline-none focus:ring-2 focus:ring-brand-blue focus:border-transparent transition-all duration-200 ${
                   isDark ? "bg-gray-800 border-gray-600 text-white" : "bg-white border-gray-300"
                 }`}
               />
@@ -198,7 +198,7 @@ const Quote = () => {
                 onChange={handleChange}
                 placeholder="Delivery Location"
                 required
-                className={`px-4 py-2 border rounded focus:outline-none focus:ring-2 focus:ring-brand-red focus:border-transparent transition-all duration-200 ${
+                className={`px-4 py-2 border rounded focus:outline-none focus:ring-2 focus:ring-brand-blue focus:border-transparent transition-all duration-200 ${
                   isDark ? "bg-gray-800 border-gray-600 text-white" : "bg-white border-gray-300"
                 }`}
               />
@@ -209,7 +209,7 @@ const Quote = () => {
                 placeholder="Cargo Description (size, weight, etc)"
                 rows="4"
                 required
-                className={`md:col-span-2 px-4 py-2 border rounded focus:outline-none focus:ring-2 focus:ring-brand-red focus:border-transparent transition-all duration-200 ${
+                className={`md:col-span-2 px-4 py-2 border rounded focus:outline-none focus:ring-2 focus:ring-brand-blue focus:border-transparent transition-all duration-200 ${
                   isDark ? "bg-gray-800 border-gray-600 text-white" : "bg-white border-gray-300"
                 }`}
               ></textarea>
@@ -234,7 +234,7 @@ const Quote = () => {
                 disabled={!verified}
                 className={`md:col-span-2 py-3 rounded text-white transition cursor-pointer font-semibold shadow-sm ${
                   verified
-                    ? "bg-brand-red hover:bg-brand-red-dark"
+                    ? "bg-brand-blue hover:bg-brand-blue-dark"
                     : "bg-gray-400 cursor-not-allowed"
                 }`}
                 whileHover={verified ? { scale: 1.02 } : {}}

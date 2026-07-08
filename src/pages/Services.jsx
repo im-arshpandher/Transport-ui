@@ -16,37 +16,37 @@ import { useSelector } from "react-redux";
 const services = [
   {
     title: "Flatbed Trucking",
-    icon: <FaTruckMoving className="text-4xl text-brand-red" />,
+    icon: <FaTruckMoving className="text-4xl text-brand-blue" />,
     description:
       "Exclusive flatbed transportation for oversized, heavy, or irregular cargo with full compliance and safety.",
   },
   {
     title: "Project Cargo Transport",
-    icon: <FaShippingFast className="text-4xl text-brand-red" />,
+    icon: <FaShippingFast className="text-4xl text-brand-blue" />,
     description:
       "Special handling for large-scale industrial and construction equipment, delivered directly to site.",
   },
   {
     title: "Route Planning & Optimization",
-    icon: <FaMapMarkedAlt className="text-4xl text-brand-red" />,
+    icon: <FaMapMarkedAlt className="text-4xl text-brand-blue" />,
     description:
       "Strategic route planning across the UAE to minimize delays, avoid restrictions, and reduce costs.",
   },
   {
     title: "Secure Loading & Lashing",
-    icon: <FaShieldAlt className="text-4xl text-brand-red" />,
+    icon: <FaShieldAlt className="text-4xl text-brand-blue" />,
     description:
       "Expert team ensures safe lashing, tarping, and load securing — critical for road compliance.",
   },
   {
   title: "24/7 Transport Support",
-  icon: <FaClock className="text-4xl text-brand-red" />,
+  icon: <FaClock className="text-4xl text-brand-blue" />,
   description:
     "Round-the-clock assistance to ensure smooth coordination, timely updates, and quick issue resolution during transit.",
 },
   {
     title: "Custom Solutions for Heavy Industries",
-    icon: <FaCogs className="text-4xl text-brand-red" />,
+    icon: <FaCogs className="text-4xl text-brand-blue" />,
     description:
       "Tailored transport services for manufacturing, energy, construction, and infrastructure sectors.",
   },
@@ -73,7 +73,7 @@ const Services = () => {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
           >
-            <span className="text-xs md:text-sm font-extrabold tracking-widest text-brand-red uppercase bg-brand-red/10 px-3 py-1.5 rounded-md inline-block mb-4">
+            <span className="text-xs md:text-sm font-extrabold tracking-widest text-brand-blue uppercase bg-brand-blue/10 px-3 py-1.5 rounded-md inline-block mb-4">
               Our Capabilities
             </span>
             <h1
@@ -93,7 +93,7 @@ const Services = () => {
             {services.map((service, index) => (
               <motion.div
                 key={index}
-                className={`p-8 rounded-xl shadow-md border border-t-4 border-t-brand-red hover:shadow-xl hover:-translate-y-1.5 transition-all duration-300 ${
+                className={`p-8 rounded-xl shadow-md border border-t-4 border-t-brand-blue hover:shadow-xl hover:-translate-y-1.5 transition-all duration-300 ${
                   isDark
                     ? "bg-slate-900 border-slate-800 text-white"
                     : "bg-white border-slate-200/60 text-slate-800"

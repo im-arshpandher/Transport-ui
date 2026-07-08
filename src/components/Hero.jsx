@@ -45,7 +45,7 @@ const Hero = () => {
         >
           {/* Tagline */}
           <div className="mb-4">
-            <span className="text-xs md:text-sm font-extrabold tracking-widest text-brand-red uppercase bg-brand-red/10 px-3 py-1.5 rounded-md inline-block">
+            <span className="text-xs md:text-sm font-extrabold tracking-widest text-brand-blue uppercase bg-brand-blue/10 px-3 py-1.5 rounded-md inline-block">
               GCC Flatbed Operations
             </span>
           </div>
@@ -56,7 +56,7 @@ const Hero = () => {
               isDark ? "text-white" : "text-slate-900"
             }`}
           >
-            You've got the <span className="text-brand-red">Freight</span> & We have access to the <span className="text-brand-red">Best Flats</span>.
+            You've got the <span className="text-brand-blue">Freight</span> & We have access to the <span className="text-brand-blue">Best Flats</span>.
           </h1>
 
           {/* Subtext description (monetransport style) */}
@@ -76,14 +76,14 @@ const Hero = () => {
               }`}
             >
               <div className="flex items-center gap-2">
-                <FiMapPin className="w-5 h-5 text-brand-red shrink-0" />
+                <FiMapPin className="w-5 h-5 text-brand-blue shrink-0" />
                 <div className="text-left">
                   <p className="text-[10px] font-black leading-none uppercase tracking-wider opacity-60">Operations</p>
                   <p className="text-xs font-black leading-tight uppercase tracking-wider mt-0.5">GCC & UAE WIDE</p>
                 </div>
               </div>
               <div className="flex items-center gap-2">
-                <FiClock className="w-5 h-5 text-brand-red shrink-0" />
+                <FiClock className="w-5 h-5 text-brand-blue shrink-0" />
                 <div className="text-left">
                   <p className="text-[10px] font-black leading-none uppercase tracking-wider opacity-60">Status</p>
                   <p className="text-xs font-black leading-tight uppercase tracking-wider mt-0.5">REAL-TIME GPS</p>
@@ -95,7 +95,7 @@ const Hero = () => {
             <div className="flex flex-row gap-4 w-full mt-2 justify-start">
               <Link to="/quote" className="flex-1 sm:flex-initial">
                 <motion.div
-                  className="px-6 py-3.5 bg-brand-red text-white rounded-lg hover:bg-brand-red-dark transition font-bold text-center shadow-lg cursor-pointer text-xs sm:text-sm uppercase tracking-wider w-full"
+                  className="px-6 py-3.5 bg-brand-blue text-white rounded-lg hover:bg-brand-blue-dark transition font-bold text-center shadow-lg cursor-pointer text-xs sm:text-sm uppercase tracking-wider w-full"
                   whileHover={{ scale: 1.04 }}
                   whileTap={{ scale: 0.96 }}
                 >

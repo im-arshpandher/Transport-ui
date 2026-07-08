@@ -42,16 +42,8 @@ const Navbar = () => {
     if (storedTheme !== null) {
       dispatch(invert(storedTheme === "true"));
     } else {
-      const darkModeMediaQuery = window.matchMedia("(prefers-color-scheme: dark)");
-      dispatch(invert(darkModeMediaQuery.matches));
-      localStorage.setItem("darkMode", darkModeMediaQuery.matches.toString());
-
-      const handleChange = (e) => {
-        dispatch(invert(e.matches));
-        localStorage.setItem("darkMode", e.matches.toString());
-      };
-      darkModeMediaQuery.addEventListener("change", handleChange);
-      return () => darkModeMediaQuery.removeEventListener("change", handleChange);
+      dispatch(invert(false));
+      localStorage.setItem("darkMode", "false");
     }
   }, [dispatch]);
 
@@ -91,18 +83,18 @@ const Navbar = () => {
         }`}
       >
         <div className="flex items-center gap-2">
-          <FaPhoneAlt className="text-brand-red text-xs shrink-0" />
-          <a href="tel:+971501234567" className="hover:text-brand-red transition">
+          <FaPhoneAlt className="text-brand-blue text-xs shrink-0" />
+          <a href="tel:+971501234567" className="hover:text-brand-blue transition">
             +971 50 123 4567
           </a>
           <span className="mx-2 text-slate-600">|</span>
-          <FaEnvelope className="text-brand-red text-xs shrink-0" />
-          <a href="mailto:hello@mashiana.com" className="hover:text-brand-red transition">
+          <FaEnvelope className="text-brand-blue text-xs shrink-0" />
+          <a href="mailto:hello@mashiana.com" className="hover:text-brand-blue transition">
             hello@mashiana.com
           </a>
         </div>
         <div className="flex items-center gap-4">
-          <span className="text-[10px] bg-brand-red text-white px-2 py-0.5 rounded font-black tracking-widest uppercase">
+          <span className="text-[10px] bg-brand-blue text-white px-2 py-0.5 rounded font-black tracking-widest uppercase">
             GCC WIDE
           </span>
           <span>FLATBED SPECIALISTS</span>
@@ -143,21 +135,21 @@ const Navbar = () => {
                   <Link
                     key={item.name}
                     to={item.href}
-                    className={`font-semibold text-sm tracking-wide transition relative py-1 hover:text-brand-red ${
+                    className={`font-semibold text-sm tracking-wide transition relative py-1 hover:text-brand-blue ${
                       useTransparentStyle
                         ? isDark
-                          ? "text-white hover:text-brand-red"
-                          : "text-slate-800 hover:text-brand-red"
+                          ? "text-white hover:text-brand-blue"
+                          : "text-slate-800 hover:text-brand-blue"
                         : isDark
-                        ? "text-slate-200 hover:text-brand-red"
-                        : "text-slate-700 hover:text-brand-red"
+                        ? "text-slate-200 hover:text-brand-blue"
+                        : "text-slate-700 hover:text-brand-blue"
                     }`}
                   >
                     {item.name}
                     {isActive && (
                       <motion.span
                         layoutId="nav-underline"
-                        className="absolute bottom-0 left-0 w-full h-[2px] bg-brand-red"
+                        className="absolute bottom-0 left-0 w-full h-[2px] bg-brand-blue"
                         transition={{ type: "spring", stiffness: 380, damping: 30 }}
                       />
                     )}
@@ -191,11 +183,11 @@ const Navbar = () => {
                   className={`px-5 py-2.5 rounded-lg border font-bold text-xs uppercase tracking-widest cursor-pointer shadow-md transition-all duration-300 ${
                     useTransparentStyle
                       ? isDark
-                        ? "border-white bg-transparent text-white hover:bg-brand-red hover:border-brand-red"
-                        : "border-brand-red bg-transparent text-brand-red hover:bg-brand-red hover:text-white"
+                        ? "border-white bg-transparent text-white hover:bg-brand-blue hover:border-brand-blue"
+                        : "border-brand-blue bg-transparent text-brand-blue hover:bg-brand-blue hover:text-white"
                       : isDark
-                      ? "border-brand-red bg-transparent text-brand-red hover:bg-brand-red hover:text-white"
-                      : "border-brand-red bg-transparent text-brand-red hover:bg-brand-red hover:text-white"
+                      ? "border-brand-blue bg-transparent text-brand-blue hover:bg-brand-blue hover:text-white"
+                      : "border-brand-blue bg-transparent text-brand-blue hover:bg-brand-blue hover:text-white"
                   }`}
                   whileHover={{ scale: 1.03 }}
                   whileTap={{ scale: 0.97 }}
@@ -330,17 +322,17 @@ const Navbar = () => {
                             className={`font-black text-sm uppercase tracking-widest py-2.5 px-3 rounded-lg transition-all duration-300 relative flex items-center justify-between ${
                               isActive
                                 ? isDark
-                                  ? "bg-slate-900 text-brand-red border-l-2 border-brand-red"
-                                  : "bg-slate-50 text-brand-red border-l-2 border-brand-red"
+                                  ? "bg-slate-900 text-brand-blue border-l-2 border-brand-blue"
+                                  : "bg-slate-50 text-brand-blue border-l-2 border-brand-blue"
                                 : isDark
-                                ? "text-slate-200 hover:bg-slate-900/50 hover:text-brand-red"
-                                : "text-slate-700 hover:bg-slate-50 hover:text-brand-red"
+                                ? "text-slate-200 hover:bg-slate-900/50 hover:text-brand-blue"
+                                : "text-slate-700 hover:bg-slate-50 hover:text-brand-blue"
                             }`}
                             onClick={toggleMenu}
                           >
                             <span>{item.name}</span>
                             {isActive && (
-                              <span className="w-1.5 h-1.5 rounded-full bg-brand-red" />
+                              <span className="w-1.5 h-1.5 rounded-full bg-brand-blue" />
                             )}
                           </Link>
                         );
@@ -352,7 +344,7 @@ const Navbar = () => {
                   <div className="pt-6 border-t border-slate-200 dark:border-slate-800/80">
                     <Link
                       to="/quote"
-                      className="block text-center py-3 font-extrabold uppercase tracking-widest bg-brand-red text-white rounded-lg hover:bg-brand-red-dark hover:scale-[1.02] active:scale-[0.98] shadow-lg transition-all duration-200"
+                      className="block text-center py-3 font-extrabold uppercase tracking-widest bg-brand-blue text-white rounded-lg hover:bg-brand-blue-dark hover:scale-[1.02] active:scale-[0.98] shadow-lg transition-all duration-200"
                       onClick={toggleMenu}
                     >
                       Connect with us

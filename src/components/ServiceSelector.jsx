@@ -11,19 +11,19 @@ const ServiceSelector = () => {
     {
       title: "Flatbed Rental & Leasing",
       description: "Secure long-term flatbeds or immediate commercial rental to cover seasonal spikes and fleet fluctuations with zero maintenance overhead.",
-      icon: <FaTruckLoading className="text-3xl text-brand-red shrink-0" />,
+      icon: <FaTruckLoading className="text-3xl text-brand-blue shrink-0" />,
       link: "/services",
     },
     {
       title: "Dedicated Project Logistics",
       description: "Full supply chain management for heavy machinery, structural steel, and construction materials with custom route surveys.",
-      icon: <FaRoute className="text-3xl text-brand-red shrink-0" />,
+      icon: <FaRoute className="text-3xl text-brand-blue shrink-0" />,
       link: "/services",
     },
     {
       title: "GCC Freight Brokerage",
       description: "Access verified heavy capacity and handle complex customs clearances smoothly across Dubai, Abu Dhabi, Saudi, and Oman borders.",
-      icon: <FaShieldAlt className="text-3xl text-brand-red shrink-0" />,
+      icon: <FaShieldAlt className="text-3xl text-brand-blue shrink-0" />,
       link: "/services",
     },
   ];
@@ -34,7 +34,7 @@ const ServiceSelector = () => {
         
         {/* Header Block */}
         <div className="text-center mb-16">
-          <span className="text-xs font-extrabold uppercase tracking-widest text-brand-red">
+          <span className="text-xs font-extrabold uppercase tracking-widest text-brand-blue">
             Commercial Divisions
           </span>
           <h2 className={`text-3xl sm:text-4xl font-extrabold tracking-tight mt-2 uppercase ${
@@ -56,8 +56,8 @@ const ServiceSelector = () => {
               key={idx}
               className={`p-8 rounded-xl shadow-md border flex flex-col justify-between transition-all duration-300 relative group overflow-hidden ${
                 isDark
-                  ? "bg-slate-950 border-slate-800 hover:border-brand-red text-white"
-                  : "bg-white border-slate-200 hover:border-brand-red text-slate-800"
+                  ? "bg-slate-950 border-slate-800 hover:border-brand-blue text-white"
+                  : "bg-white border-slate-200 hover:border-brand-blue text-slate-800"
               }`}
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -67,7 +67,7 @@ const ServiceSelector = () => {
             >
               {/* Top content */}
               <div>
-                <div className="mb-6 inline-flex p-3 rounded-lg bg-brand-red/5">
+                <div className="mb-6 inline-flex p-3 rounded-lg bg-brand-blue/5">
                   {service.icon}
                 </div>
                 <h3 className={`text-xl font-bold uppercase tracking-wide mb-3 ${
@@ -84,14 +84,14 @@ const ServiceSelector = () => {
               <div className="mt-8">
                 <Link
                   to={service.link}
-                  className="inline-flex items-center text-xs font-black uppercase tracking-widest text-brand-red group-hover:underline"
+                  className="inline-flex items-center text-xs font-black uppercase tracking-widest text-brand-blue group-hover:underline"
                 >
                   Explore Service &rarr;
                 </Link>
               </div>
 
               {/* Crimson Accent hover strip */}
-              <div className="absolute bottom-0 left-0 w-full h-[3px] bg-brand-red transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left" />
+              <div className="absolute bottom-0 left-0 w-full h-[3px] bg-brand-blue transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left" />
             </motion.div>
           ))}
         </div>

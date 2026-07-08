@@ -27,7 +27,7 @@ export const whyChooseUsData = [
 ];
 
 const WhyChooseUsTimeline = ({ data, isDark }) => (
-  <div className="relative border-l-4 border-brand-red ml-2 sm:ml-6">
+  <div className="relative border-l-4 border-brand-blue ml-2 sm:ml-6">
     {data.map((item, idx) => (
       <motion.div
         key={idx}
@@ -38,14 +38,14 @@ const WhyChooseUsTimeline = ({ data, isDark }) => (
         transition={{ duration: 0.5, delay: idx * 0.08 }}
       >
         {/* Point Marker */}
-        <div className="absolute -left-[24px] sm:-left-[48px] top-1.5 w-4 h-4 rounded-full bg-brand-red border-4 border-slate-50 dark:border-slate-900 group-hover:scale-125 transition-transform" />
+        <div className="absolute -left-[24px] sm:-left-[48px] top-1.5 w-4 h-4 rounded-full bg-brand-blue border-4 border-slate-50 dark:border-slate-900 group-hover:scale-125 transition-transform" />
 
         {/* Card */}
         <div
           className={`p-6 rounded-xl shadow border transition-all duration-300
             ${isDark
-              ? "bg-slate-950 border-slate-900 hover:border-brand-red"
-              : "bg-white border-slate-200 hover:border-brand-red"
+              ? "bg-slate-950 border-slate-900 hover:border-brand-blue"
+              : "bg-white border-slate-200 hover:border-brand-blue"
             }
             group-hover:shadow-lg`}
         >
@@ -71,7 +71,7 @@ const TransportServices = () => {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           
           <div className="text-center mb-16">
-            <span className="text-xs font-extrabold uppercase tracking-widest text-brand-red">
+            <span className="text-xs font-extrabold uppercase tracking-widest text-brand-blue">
               Performance Standards
             </span>
             <h2 className={`text-3xl sm:text-4xl font-extrabold tracking-tight mt-2 uppercase ${isDark ? "text-white" : "text-slate-900"}`}>
@@ -88,7 +88,7 @@ const TransportServices = () => {
               isDark ? "bg-slate-900/60 border-slate-800" : "bg-slate-50 border-slate-200"
             }`}>
               <div>
-                <div className="mb-6 inline-flex p-3 rounded-lg bg-brand-red/10 text-brand-red">
+                <div className="mb-6 inline-flex p-3 rounded-lg bg-brand-blue/10 text-brand-blue">
                   <FaBoxes className="text-2xl" />
                 </div>
                 <h3 className={`text-xl font-bold uppercase tracking-wider mb-4 ${isDark ? "text-white" : "text-slate-900"}`}>
@@ -98,7 +98,7 @@ const TransportServices = () => {
                   Avoid slow cargo shifts at warehouses. Your heavy components, steel structures, or pipes stay secured on the exact same trailer from pick-up to final delivery point. No damage risk.
                 </p>
               </div>
-              <div className="mt-8 pt-4 border-t border-slate-800 flex items-center gap-2 text-xs font-bold text-brand-red uppercase tracking-wider">
+              <div className="mt-8 pt-4 border-t border-slate-800 flex items-center gap-2 text-xs font-bold text-brand-blue uppercase tracking-wider">
                 <FaCheckCircle /> <span>Single-trailer shipping</span>
               </div>
             </div>
@@ -108,7 +108,7 @@ const TransportServices = () => {
               isDark ? "bg-slate-900/60 border-slate-800" : "bg-slate-50 border-slate-200"
             }`}>
               <div>
-                <div className="mb-6 inline-flex p-3 rounded-lg bg-brand-red/10 text-brand-red">
+                <div className="mb-6 inline-flex p-3 rounded-lg bg-brand-blue/10 text-brand-blue">
                   <FaTv className="text-2xl" />
                 </div>
                 <h3 className={`text-xl font-bold uppercase tracking-wider mb-4 ${isDark ? "text-white" : "text-slate-900"}`}>
@@ -154,7 +154,7 @@ const TransportServices = () => {
                   
                   {/* Interactive marker */}
                   <div className="flex items-center gap-2 relative z-10 mt-2">
-                    <FaMapMarkerAlt className="text-brand-red animate-bounce text-sm shrink-0" />
+                    <FaMapMarkerAlt className="text-brand-blue animate-bounce text-sm shrink-0" />
                     <div>
                       <p className="text-[10px] font-black uppercase text-white leading-none">BORDER APPROACH</p>
                       <p className="text-[8px] text-slate-400 mt-0.5">DUBAI ➔ RIYADH TRANSIT</p>
@@ -167,7 +167,7 @@ const TransportServices = () => {
                   </div>
                 </div>
               </div>
-              <div className="mt-8 pt-4 border-t border-slate-800 flex items-center gap-2 text-xs font-bold text-brand-red uppercase tracking-wider">
+              <div className="mt-8 pt-4 border-t border-slate-800 flex items-center gap-2 text-xs font-bold text-brand-blue uppercase tracking-wider">
                 <FaCheckCircle /> <span>Samsara GPS Integration</span>
               </div>
             </div>
@@ -177,7 +177,7 @@ const TransportServices = () => {
               isDark ? "bg-slate-900/60 border-slate-800" : "bg-slate-50 border-slate-200"
             }`}>
               <div>
-                <div className="mb-6 inline-flex p-3 rounded-lg bg-brand-red/10 text-brand-red">
+                <div className="mb-6 inline-flex p-3 rounded-lg bg-brand-blue/10 text-brand-blue">
                   <FaTools className="text-2xl" />
                 </div>
                 <h3 className={`text-xl font-bold uppercase tracking-wider mb-4 ${isDark ? "text-white" : "text-slate-900"}`}>
@@ -187,7 +187,7 @@ const TransportServices = () => {
                   Keep delivery timelines secure. We inspect and maintain all flatbeds, binders, stanchions, and tarps. No breakdowns, no delay excuses, no payload compromise.
                 </p>
               </div>
-              <div className="mt-8 pt-4 border-t border-slate-800 flex items-center gap-2 text-xs font-bold text-brand-red uppercase tracking-wider">
+              <div className="mt-8 pt-4 border-t border-slate-800 flex items-center gap-2 text-xs font-bold text-brand-blue uppercase tracking-wider">
                 <FaCheckCircle /> <span>Regularly serviced setups</span>
               </div>
             </div>
@@ -201,7 +201,7 @@ const TransportServices = () => {
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           
           <div className="text-center mb-16">
-            <span className="text-xs font-extrabold uppercase tracking-widest text-brand-red">
+            <span className="text-xs font-extrabold uppercase tracking-widest text-brand-blue">
               Why Partner With Us
             </span>
             <h2 className={`text-3xl sm:text-4xl font-extrabold tracking-tight mt-2 uppercase ${isDark ? "text-white" : "text-slate-900"}`}>

@@ -26,7 +26,7 @@ const About = () => {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
           >
-            <span className="text-xs md:text-sm font-extrabold tracking-widest text-brand-red uppercase bg-brand-red/10 px-3 py-1.5 rounded-md inline-block mb-4">
+            <span className="text-xs md:text-sm font-extrabold tracking-widest text-brand-blue uppercase bg-brand-blue/10 px-3 py-1.5 rounded-md inline-block mb-4">
               Who We Are
             </span>
             <h1
@@ -133,7 +133,7 @@ const About = () => {
               transition={{ duration: 0.8 }}
               className={`p-8 rounded-xl border ${isDark ? "bg-slate-900 border-slate-800" : "bg-slate-50 border-slate-200"}`}
             >
-              <h3 className="text-xl font-black uppercase tracking-wider text-brand-red mb-4">
+              <h3 className="text-xl font-black uppercase tracking-wider text-brand-blue mb-4">
                 Our Mission
               </h3>
               <p className={`text-justify leading-relaxed ${isDark ? "text-slate-300" : "text-slate-600"}`}>
@@ -148,7 +148,7 @@ const About = () => {
               transition={{ duration: 0.8, delay: 0.1 }}
               className={`p-8 rounded-xl border ${isDark ? "bg-slate-900 border-slate-800" : "bg-slate-50 border-slate-200"}`}
             >
-              <h3 className="text-xl font-black uppercase tracking-wider text-brand-red mb-4">
+              <h3 className="text-xl font-black uppercase tracking-wider text-brand-blue mb-4">
                 Our Vision
               </h3>
               <p className={`text-justify leading-relaxed ${isDark ? "text-slate-300" : "text-slate-600"}`}>

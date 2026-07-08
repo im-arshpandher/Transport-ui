@@ -73,7 +73,7 @@ const HomeQuoteForm = () => {
           <h2 className={`text-2xl sm:text-3xl lg:text-4xl font-black uppercase tracking-tight ${
             isDark ? "text-white" : "text-slate-900"
           }`}>
-            Call <a href="tel:+971501234567" className="text-brand-red hover:underline">+971 50 123 4567</a> now to get a flatbed quote.
+            Call <a href="tel:+971501234567" className="text-brand-blue hover:underline">+971 50 123 4567</a> now to get a flatbed quote.
           </h2>
           <p className={`mt-2 text-sm ${isDark ? "text-slate-400" : "text-slate-600"}`}>
             Or submit details below and a heavy logistics advisor will contact you within 15 minutes.
@@ -95,8 +95,8 @@ const HomeQuoteForm = () => {
                 required
                 className={`w-full py-3 bg-transparent border-b focus:outline-none transition-all duration-300 text-sm ${
                   isDark
-                    ? "border-slate-800 focus:border-brand-red text-white placeholder-slate-600"
-                    : "border-slate-300 focus:border-brand-red text-slate-800 placeholder-slate-400"
+                    ? "border-slate-800 focus:border-brand-blue text-white placeholder-slate-600"
+                    : "border-slate-300 focus:border-brand-blue text-slate-800 placeholder-slate-400"
                 }`}
               />
             </div>
@@ -111,8 +111,8 @@ const HomeQuoteForm = () => {
                 required
                 className={`w-full py-3 bg-transparent border-b focus:outline-none transition-all duration-300 text-sm ${
                   isDark
-                    ? "border-slate-800 focus:border-brand-red text-white placeholder-slate-600"
-                    : "border-slate-300 focus:border-brand-red text-slate-800 placeholder-slate-400"
+                    ? "border-slate-800 focus:border-brand-blue text-white placeholder-slate-600"
+                    : "border-slate-300 focus:border-brand-blue text-slate-800 placeholder-slate-400"
                 }`}
               />
             </div>
@@ -127,8 +127,8 @@ const HomeQuoteForm = () => {
                 required
                 className={`w-full py-3 bg-transparent border-b focus:outline-none transition-all duration-300 text-sm ${
                   isDark
-                    ? "border-slate-800 focus:border-brand-red text-white placeholder-slate-600"
-                    : "border-slate-300 focus:border-brand-red text-slate-800 placeholder-slate-400"
+                    ? "border-slate-800 focus:border-brand-blue text-white placeholder-slate-600"
+                    : "border-slate-300 focus:border-brand-blue text-slate-800 placeholder-slate-400"
                 }`}
               />
             </div>
@@ -143,8 +143,8 @@ const HomeQuoteForm = () => {
                 required
                 className={`w-full py-3 bg-transparent border-b focus:outline-none transition-all duration-300 text-sm ${
                   isDark
-                    ? "border-slate-800 focus:border-brand-red text-white placeholder-slate-600"
-                    : "border-slate-300 focus:border-brand-red text-slate-800 placeholder-slate-400"
+                    ? "border-slate-800 focus:border-brand-blue text-white placeholder-slate-600"
+                    : "border-slate-300 focus:border-brand-blue text-slate-800 placeholder-slate-400"
                 }`}
               />
             </div>
@@ -159,8 +159,8 @@ const HomeQuoteForm = () => {
                 required
                 className={`w-full py-3 bg-transparent border-b focus:outline-none transition-all duration-300 text-sm ${
                   isDark
-                    ? "border-slate-800 focus:border-brand-red text-white placeholder-slate-600"
-                    : "border-slate-300 focus:border-brand-red text-slate-800 placeholder-slate-400"
+                    ? "border-slate-800 focus:border-brand-blue text-white placeholder-slate-600"
+                    : "border-slate-300 focus:border-brand-blue text-slate-800 placeholder-slate-400"
                 }`}
               />
             </div>
@@ -173,8 +173,8 @@ const HomeQuoteForm = () => {
                 required
                 className={`w-full py-3 bg-transparent border-b focus:outline-none transition-all duration-300 text-sm cursor-pointer ${
                   isDark
-                    ? "border-slate-800 focus:border-brand-red text-slate-300 bg-slate-950 placeholder-slate-600"
-                    : "border-slate-300 focus:border-brand-red text-slate-600 bg-white placeholder-slate-400"
+                    ? "border-slate-800 focus:border-brand-blue text-slate-300 bg-slate-950 placeholder-slate-600"
+                    : "border-slate-300 focus:border-brand-blue text-slate-600 bg-white placeholder-slate-400"
                 }`}
               >
                 <option value="">How Did You Hear About Us? *</option>
@@ -195,8 +195,8 @@ const HomeQuoteForm = () => {
                 placeholder="Any Special Flatbed Requirements (e.g. dimensions, cargo weight, tarps needed)"
                 className={`w-full py-3 bg-transparent border-b focus:outline-none transition-all duration-300 text-sm ${
                   isDark
-                    ? "border-slate-800 focus:border-brand-red text-white placeholder-slate-600"
-                    : "border-slate-300 focus:border-brand-red text-slate-800 placeholder-slate-400"
+                    ? "border-slate-800 focus:border-brand-blue text-white placeholder-slate-600"
+                    : "border-slate-300 focus:border-brand-blue text-slate-800 placeholder-slate-400"
                 }`}
               />
             </div>
@@ -210,8 +210,8 @@ const HomeQuoteForm = () => {
               disabled={loading}
               className={`px-8 py-3.5 border font-bold text-xs uppercase tracking-widest cursor-pointer shadow-md rounded-lg transition-all duration-300 ${
                 isDark
-                  ? "border-brand-red text-brand-red hover:bg-brand-red hover:text-white"
-                  : "border-brand-red text-brand-red hover:bg-brand-red hover:text-white"
+                  ? "border-brand-blue text-brand-blue hover:bg-brand-blue hover:text-white"
+                  : "border-brand-blue text-brand-blue hover:bg-brand-blue hover:text-white"
               }`}
               whileHover={{ scale: 1.04 }}
               whileTap={{ scale: 0.96 }}
