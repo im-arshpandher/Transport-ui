@@ -1,8 +1,10 @@
+"use client";
+
 import React, { useEffect } from "react";
-import { Helmet } from "react-helmet-async"; 
+ 
 import { motion } from "framer-motion"; 
-import Navbar from "../common/Navbar"; 
-import Footer from "../common/Footer"; 
+import Navbar from "@/components/common/Navbar"; 
+import Footer from "@/components/common/Footer"; 
 import { useSelector } from "react-redux"; 
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Autoplay } from "swiper/modules";
@@ -17,10 +19,7 @@ const About = () => {
 
   return (
     <>
-      <Helmet>
-        <title>About Us | Heavy Fleet Operations | onroad</title>
-        <meta name="description" content="With over 35 years of experience, we provide reliable heavy transport solutions including flatbeds, lowbeds, pickups, and container chassis across the UAE." />
-      </Helmet>
+      
       <Navbar />
       <section className={`pt-28 pb-20 md:pt-40 md:pb-24 ${isDark ? "bg-slate-900" : "bg-white"}`}>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">

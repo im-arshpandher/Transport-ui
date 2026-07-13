@@ -2,7 +2,7 @@ import React from "react";
 import { useSelector } from "react-redux";
 import { FaTruckLoading, FaRoute, FaShieldAlt } from "react-icons/fa";
 import { motion } from "framer-motion";
-import { Link } from "react-router-dom";
+import Link from 'next/link';
 
 const ServiceSelector = () => {
   const isDark = useSelector((state) => state.darkMode.value);
@@ -10,19 +10,19 @@ const ServiceSelector = () => {
   const services = [
     {
       title: "Fleet Rental & Leasing",
-      description: "Secure long-term <b>flatbeds, lowbeds, or pickups</b> or immediate commercial rental to cover seasonal spikes and fleet fluctuations with zero maintenance overhead.",
+      description: <>Secure long-term <b>flatbeds, lowbeds, or pickups</b> or immediate commercial rental to cover seasonal spikes and fleet fluctuations with zero maintenance overhead.</>,
       icon: <FaTruckLoading className="text-3xl text-brand-blue shrink-0" />,
       link: "/services",
     },
     {
       title: "Dedicated Project Logistics",
-      description: "Full supply chain management for heavy machinery, structural steel, and construction materials with custom route surveys.",
+      description: <>Full supply chain management for heavy machinery, structural steel, and construction materials with custom route surveys.</>,
       icon: <FaRoute className="text-3xl text-brand-blue shrink-0" />,
       link: "/services",
     },
     {
       title: "UAE Freight Brokerage",
-      description: "Access verified heavy capacity and handle complex customs clearances smoothly across Dubai, Abu Dhabi, Saudi, and Oman borders.",
+      description: <>Access verified heavy capacity and handle complex customs clearances smoothly across Dubai, Abu Dhabi, Saudi, and Oman borders.</>,
       icon: <FaShieldAlt className="text-3xl text-brand-blue shrink-0" />,
       link: "/services",
     },
@@ -82,8 +82,7 @@ const ServiceSelector = () => {
 
               {/* Bottom Call to Action */}
               <div className="mt-8">
-                <Link
-                  to={service.link}
+                <Link href={service.link}
                   className="inline-flex items-center text-xs font-black uppercase tracking-widest text-brand-blue group-hover:underline"
                 >
                   Explore Service &rarr;

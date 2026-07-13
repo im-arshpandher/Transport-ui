@@ -63,9 +63,8 @@ const WhyChooseUsTimeline = ({ data, isDark }) => (
           </h3>
           <p
             className={`text-sm text-justify leading-relaxed ${isDark ? "text-slate-400" : "text-slate-600"}`}
-          >
-            {item.description}
-          </p>
+            dangerouslySetInnerHTML={{ __html: item.description }}
+          />
         </div>
       </motion.div>
     ))}
@@ -254,8 +253,8 @@ const TransportServices = () => {
                 <p
                   className={`text-sm text-justify leading-relaxed ${isDark ? "text-slate-400" : "text-slate-600"}`}
                 >
-                  Keep delivery timelines secure. We inspect and maintain all
-                  <b>flatbeds, lowbeds, container chassis</b>, binders, stanchions, and tarps. No breakdowns, no
+                  Keep delivery timelines secure. We inspect and maintain all 
+                  <b> flatbeds, lowbeds, container chassis</b>, binders, stanchions, and tarps. No breakdowns, no
                   delay excuses, no payload compromise.
                 </p>
               </div>

@@ -1,6 +1,6 @@
 import React from "react";
 import { motion } from "framer-motion";
-import { Link } from "react-router-dom";
+import Link from 'next/link';
 import {
   FaFacebookF,
   FaLinkedinIn,
@@ -137,11 +137,11 @@ const Footer = () => {
               ))}
             </div>
             <div className="mt-6 flex flex-wrap gap-4 text-xs font-bold uppercase tracking-wider">
-              <Link to="/about" className="hover:text-brand-blue transition">
+              <Link href="/about" className="hover:text-brand-blue transition">
                 About Us
               </Link>
               <span className="text-slate-800">•</span>
-              <Link to="/services" className="hover:text-brand-blue transition">
+              <Link href="/services" className="hover:text-brand-blue transition">
                 Our Services
               </Link>
               <span className="text-slate-800">•</span>

@@ -1,16 +1,18 @@
+"use client";
+
 import React, { useState } from 'react';
-import { Helmet } from "react-helmet-async";
+
 import { useDispatch } from 'react-redux';
-import { loginSuccess } from '../../redux/authSlice';
-import { useNavigate } from 'react-router-dom';
+import { loginSuccess } from '@/store/authSlice';
+import { useRouter } from 'next/navigation';
 import axios from 'axios';
-import { saveToken } from '../utils/cookies';
+import { saveToken } from '@/lib/cookies';
 
 const Login = () => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const dispatch = useDispatch();
-  const navigate = useNavigate();
+  const navigate = useRouter();
 
   const handleLogin = async (e) => {
     e.preventDefault();
@@ -32,10 +34,7 @@ const Login = () => {
 
   return (
     <div className="min-h-screen flex items-center justify-center bg-gray-100">
-      <Helmet>
-        <title>Admin Login | onroad</title>
-        <meta name="robots" content="noindex, nofollow" />
-      </Helmet>
+      
       <form onSubmit={handleLogin} className="bg-white p-6 rounded shadow-md w-full max-w-sm">
         <h2 className="text-2xl font-bold mb-4">Login</h2>
         <div className="mb-4">

@@ -1,19 +1,24 @@
+"use client";
 import React, { useEffect, useState } from "react";
 import { createPortal } from "react-dom";
 import { FaBars, FaTimes, FaEnvelope, FaPhoneAlt } from "react-icons/fa";
 import { FiSun, FiMoon } from "react-icons/fi";
 import { motion, AnimatePresence } from "framer-motion";
-import { Link, useLocation } from "react-router-dom";
+import Link from 'next/link';
+import { usePathname } from 'next/navigation';
 import { useSelector, useDispatch } from "react-redux";
-import { invert } from "../../redux/colorModeSlice";
+import { invert } from "@/store/colorModeSlice";
 
 const Navbar = () => {
   const isDark = useSelector((state) => state.darkMode.value);
   const dispatch = useDispatch();
-  const location = useLocation();
+  const pathname = usePathname();
 
   const [isOpen, setIsOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
+  const [mounted, setMounted] = useState(false);
+
+  useEffect(() => setMounted(true), []);
 
   const toggleMenu = () => setIsOpen(!isOpen);
 
@@ -62,10 +67,10 @@ const Navbar = () => {
   // Close mobile drawer when route changes
   useEffect(() => {
     setIsOpen(false);
-  }, [location]);
+  }, [pathname]);
 
   // Is the current page Home? We apply transparent overlay navbar only on Home page top scroll.
-  const isHomePage = location.pathname === "/";
+  const isHomePage = pathname === "/";
   const useTransparentStyle = isHomePage && !scrolled;
 
   return (
@@ -120,7 +125,7 @@ const Navbar = () => {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex items-center justify-between h-[50px]">
             {/* Logo */}
-            <Link to="/">
+            <Link href="/">
               <div className="flex items-center">
                 <img
                   src="logo-removebg-preview.webp"
@@ -136,11 +141,9 @@ const Navbar = () => {
             {/* Desktop Menu */}
             <div className="hidden md:flex space-x-6 items-center">
               {menuItems.map((item) => {
-                const isActive = location.pathname === item.href;
+                const isActive = pathname === item.href;
                 return (
-                  <Link
-                    key={item.name}
-                    to={item.href}
+                  <Link href={item.href} key={item.name}
                     className={`font-semibold text-sm tracking-wide transition relative py-1 hover:text-brand-blue ${
                       useTransparentStyle
                         ? isDark
@@ -250,7 +253,7 @@ const Navbar = () => {
         </div>
 
         {/* Mobile Drawer Slide-out Sidebar Panel */}
-        {createPortal(
+        {mounted && createPortal(
           <AnimatePresence>
             {isOpen && (
               <>
@@ -278,7 +281,7 @@ const Navbar = () => {
                   <div>
                     {/* Drawer Header */}
                     <div className="flex items-center justify-between pb-6 border-b border-slate-200 dark:border-slate-800/80">
-                      <Link to="/" onClick={toggleMenu}>
+                      <Link href="/" onClick={toggleMenu}>
                         <img
                           src="logo-removebg-preview.webp"
                           alt="onroad Logo"
@@ -327,11 +330,9 @@ const Navbar = () => {
                     {/* Vertical Navigation Links */}
                     <div className="mt-8 flex flex-col space-y-4">
                       {menuItems.map((item) => {
-                        const isActive = location.pathname === item.href;
+                        const isActive = pathname === item.href;
                         return (
-                          <Link
-                            key={item.name}
-                            to={item.href}
+                          <Link href={item.href} key={item.name}
                             className={`font-black text-sm uppercase tracking-widest py-2.5 px-3 rounded-lg transition-all duration-300 relative flex items-center justify-between ${
                               isActive
                                 ? isDark

@@ -1,5 +1,6 @@
+"use client";
 import React from 'react';
-import { Navigate } from 'react-router-dom';
+import { redirect } from 'next/navigation';
 import { useSelector } from 'react-redux';
 
 const ProtectedRoute = ({ children }) => {
@@ -11,7 +12,8 @@ const ProtectedRoute = ({ children }) => {
     return <div>Loading...</div>
   }
 
-  return isAuthenticated ? children : <Navigate to="/login" />;
+  if (!isAuthenticated) redirect('/login');
+  return children;
 };
 
 export default ProtectedRoute; 

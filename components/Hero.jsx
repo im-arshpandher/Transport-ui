@@ -1,6 +1,6 @@
 import React from "react";
 import { motion } from "framer-motion";
-import { Link } from "react-router-dom";
+import Link from 'next/link';
 import { useSelector } from "react-redux";
 import { FiMapPin, FiClock } from "react-icons/fi";
 
@@ -116,7 +116,7 @@ const Hero = () => {
                   Quote Shipment
                 </motion.div>
               </a>
-              <Link to="/about" className="flex-1 sm:flex-initial">
+              <Link href="/about" className="flex-1 sm:flex-initial">
                 <motion.div
                   className={`px-6 py-3.5 border rounded-lg transition font-bold text-center shadow-md cursor-pointer text-xs sm:text-sm uppercase tracking-wider w-full ${
                     isDark
