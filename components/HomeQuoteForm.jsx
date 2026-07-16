@@ -4,6 +4,7 @@ import { motion } from "framer-motion";
 import axios from "axios";
 import { toast, ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import { FaTimes } from "react-icons/fa";
 
 const HomeQuoteForm = () => {
   const isDark = useSelector((state) => state.darkMode.value);
@@ -17,9 +18,43 @@ const HomeQuoteForm = () => {
     specialRequirements: "",
     referral: "",
   });
+  const [files, setFiles] = useState([]);
 
   const handleChange = (e) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
+  };
+
+  const handleFileChange = (e) => {
+    const selectedFiles = Array.from(e.target.files);
+    
+    const allowedExtensions = ['.pdf', '.docx', '.xlsx', '.csv', '.png', '.jpg', '.jpeg', '.heif'];
+    const validFiles = selectedFiles.filter(file => {
+      const extension = file.name.slice((Math.max(0, file.name.lastIndexOf(".")) || Infinity)).toLowerCase();
+      return allowedExtensions.includes(extension);
+    });
+
+    if (validFiles.length !== selectedFiles.length) {
+      toast.error("Some files were rejected. Invalid format.");
+    }
+
+    if (validFiles.length === 0) {
+      e.target.value = null;
+      return;
+    }
+
+    const newFiles = [...files, ...validFiles];
+    const totalSize = newFiles.reduce((acc, file) => acc + file.size, 0);
+    if (totalSize > 5 * 1024 * 1024) {
+      toast.error("Total file size exceeds 5MB limit.");
+      e.target.value = null; // reset input
+      return;
+    }
+    setFiles(newFiles);
+    e.target.value = null; // reset so same file can be selected again
+  };
+
+  const removeFile = (indexToRemove) => {
+    setFiles(files.filter((_, index) => index !== indexToRemove));
   };
 
   const handleSubmit = async (e) => {
@@ -28,17 +63,24 @@ const HomeQuoteForm = () => {
 
     try {
       // Map form fields to backend expectations
-      const payload = {
-        fullName: formData.companyName, // Backend expects fullName
-        email: formData.email,
-        phoneNumber: formData.phoneNumber,
-        serviceType: "transport", // default service type
-        pickupLocation: formData.pickupZip,
-        deliveryLocation: formData.deliveryZip,
-        cargoDescription: `Requirements: ${formData.specialRequirements}. Referral: ${formData.referral}`,
-      };
+      const payload = new FormData();
+      payload.append("fullName", formData.companyName);
+      payload.append("email", formData.email);
+      payload.append("phoneNumber", formData.phoneNumber);
+      payload.append("serviceType", "transport");
+      payload.append("pickupLocation", formData.pickupZip);
+      payload.append("deliveryLocation", formData.deliveryZip);
+      payload.append("cargoDescription", `Requirements: ${formData.specialRequirements}. Referral: ${formData.referral}`);
+      
+      files.forEach(file => {
+        payload.append("documents", file);
+      });
 
-      const res = await axios.post("http://localhost:5000/api/quote", payload);
+      const res = await axios.post("http://localhost:5000/api/quote", payload, {
+        headers: {
+          "Content-Type": "multipart/form-data"
+        }
+      });
 
       if (res.data.success) {
         toast.success("Freight quote request sent successfully!");
@@ -51,6 +93,9 @@ const HomeQuoteForm = () => {
           specialRequirements: "",
           referral: "",
         });
+        setFiles([]);
+        const fileInput = document.getElementById('file-upload');
+        if (fileInput) fileInput.value = "";
       } else {
         toast.error(res.data.message || "Failed to submit request.");
       }
@@ -199,6 +244,65 @@ const HomeQuoteForm = () => {
                     : "border-slate-300 focus:border-brand-blue text-slate-800 placeholder-slate-400"
                 }`}
               />
+            </div>
+
+            <div className="relative md:col-span-3">
+              <div className="mb-3">
+                <label className={`block text-xs ${isDark ? "text-slate-400" : "text-slate-500"}`}>
+                  Upload Requirement Documents (Max 5MB total)
+                </label>
+                <p className={`text-[10px] mt-1 ${isDark ? "text-slate-500" : "text-slate-400"}`}>
+                  Allowed types: .pdf, .docx, .xlsx, .csv, .png, .jpg, .jpeg, .heif
+                </p>
+              </div>
+              
+              <div className="space-y-4">
+                {files.length > 0 && (
+                  <div className="flex flex-wrap gap-2">
+                    {files.map((file, index) => (
+                      <div 
+                        key={index} 
+                        className={`flex items-center gap-2 px-3 py-1.5 rounded-full text-xs border shadow-sm ${
+                          isDark ? "bg-slate-900 border-slate-700 text-slate-300" : "bg-white border-slate-200 text-slate-700"
+                        }`}
+                      >
+                        <a 
+                          href={URL.createObjectURL(file)} 
+                          target="_blank" 
+                          rel="noopener noreferrer"
+                          className="truncate max-w-[150px] hover:text-brand-blue hover:underline cursor-pointer"
+                          title="Click to preview"
+                        >
+                          {file.name}
+                        </a>
+                        <button
+                          type="button"
+                          onClick={() => removeFile(index)}
+                          className="text-slate-400 hover:text-red-500 transition-colors"
+                        >
+                          <FaTimes />
+                        </button>
+                      </div>
+                    ))}
+                  </div>
+                )}
+                
+                <label className={`inline-block px-6 py-2.5 rounded-lg border font-bold text-xs uppercase tracking-widest cursor-pointer transition-all duration-300 ${
+                  isDark 
+                    ? "border-brand-blue text-brand-blue hover:bg-brand-blue hover:text-white" 
+                    : "border-brand-blue text-brand-blue hover:bg-brand-blue hover:text-white"
+                }`}>
+                  {files.length > 0 ? "Add Another Document" : "Select Documents"}
+                  <input
+                    id="file-upload"
+                    type="file"
+                    multiple
+                    accept=".pdf,.docx,.xlsx,.csv,.png,.jpg,.jpeg,.heif"
+                    onChange={handleFileChange}
+                    className="hidden"
+                  />
+                </label>
+              </div>
             </div>
 
           </div>
