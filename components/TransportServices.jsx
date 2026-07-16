@@ -78,7 +78,7 @@ const TransportServices = () => {
     <div className="w-full">
       {/* 1. Value Proposition Grid Section (monetransport style) */}
       <section
-        className={`py-20 border-b transition-colors duration-300 ${isDark ? "bg-slate-950 border-slate-900" : "bg-white border-slate-200"}`}
+        className={`pt-10 pb-20 border-b transition-colors duration-300 ${isDark ? "bg-slate-950 border-slate-900" : "bg-white border-slate-200"}`}
       >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
@@ -254,7 +254,7 @@ const TransportServices = () => {
                   className={`text-sm text-justify leading-relaxed ${isDark ? "text-slate-400" : "text-slate-600"}`}
                 >
                   Keep delivery timelines secure. We inspect and maintain all 
-                  <b> flatbeds, lowbeds, container chassis</b>, binders, stanchions, and tarps. No breakdowns, no
+                  flatbeds, lowbeds, container chassis, binders, stanchions, and tarps. No breakdowns, no
                   delay excuses, no payload compromise.
                 </p>
               </div>

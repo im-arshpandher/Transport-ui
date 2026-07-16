@@ -59,7 +59,7 @@ const About = () => {
               </h3>
               <p className={`mt-4 text-justify leading-relaxed ${isDark ? "text-slate-300" : "text-slate-600"}`}>
                 While this is a new venture started in <b>2023</b>, our core team brings over <b>35+ years</b> of experience in the industry. We specialize in heavy
-                equipment transport, freight logistics, warehousing, and route
+                equipment transport, freight logistics, and route
                 optimization across the UAE.
               </p>
               <p className={`mt-4 text-justify leading-relaxed ${isDark ? "text-slate-300" : "text-slate-600"}`}>
@@ -106,15 +106,15 @@ const About = () => {
             >
               <SwiperSlide>
                 <img
-                  src="https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?auto=format&fit=crop&q=80&w=800"
-                  alt="Loading Cargo"
+                  src="https://plus.unsplash.com/premium_photo-1682144324433-ae1ee89a0238?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D?auto=format&fit=crop&q=80&w=800"
+                  alt="Fleet of Trucks"
                   className="w-full h-64 object-cover rounded-xl shadow-lg border border-gray-100 dark:border-gray-700"
                 />
               </SwiperSlide>
               <SwiperSlide>
                 <img
-                  src="https://images.unsplash.com/photo-1553413077-190dd305871c?auto=format&fit=crop&q=80&w=800"
-                  alt="Warehouse"
+                  src="/hero_day_mobile.png"
+                  alt="Truck on Highway"
                   className="w-full h-64 object-cover rounded-xl shadow-lg border border-gray-100 dark:border-gray-700"
                 />
               </SwiperSlide>

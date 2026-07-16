@@ -36,17 +36,17 @@ const Footer = () => {
               <div className="flex items-start gap-3">
                 <FaMapMarkerAlt className="text-brand-blue text-base shrink-0 mt-0.5" />
                 <span>
-                  onroad Transport Yard, Industrial Area 12, Dubai, United Arab
+                  Dubai, United Arab
                   Emirates
                 </span>
               </div>
               <div className="flex items-center gap-3">
                 <FaPhoneAlt className="text-brand-blue text-base shrink-0" />
                 <a
-                  href="tel:+971501234567"
+                  href="tel:+971565345459"
                   className="hover:text-white transition"
                 >
-                  +971 50 123 4567
+                  +971 56 534 5459
                 </a>
               </div>
               <div className="flex items-center gap-3">
@@ -154,7 +154,7 @@ const Footer = () => {
 
         {/* Footer Bottom Block */}
         <div className="border-t border-slate-900 pt-8 mt-8 flex flex-col md:flex-row items-center justify-between text-xs text-slate-500 font-semibold tracking-wider">
-          <p>© {currentYear} onroad Heavy Transport. All Rights Reserved.</p>
+          <p>© {currentYear} onroad Transport. All Rights Reserved.</p>
           <div className="flex gap-4 mt-4 md:mt-0">
             <a href="#" className="hover:text-brand-blue transition">
               Terms & Conditions

@@ -129,6 +129,16 @@ const Services = () => {
               </motion.div>
             ))}
           </div>
+
+          {/* Bottom Action CTA Button */}
+          <div className="mt-16 flex justify-center">
+            <a
+              href="/#quote-section"
+              className="px-8 py-4 font-extrabold uppercase tracking-widest bg-brand-blue text-white rounded-lg hover:bg-brand-blue-dark hover:scale-[1.02] active:scale-[0.98] shadow-lg transition-all duration-200"
+            >
+              Get Quotation Now
+            </a>
+          </div>
         </div>
       </section>
       <Footer />

@@ -56,14 +56,14 @@ const HomeQuoteForm = () => {
       }
     } catch (err) {
       console.error(err);
-      toast.error("Could not submit. Please call +971 50 123 4567 directly.");
+      toast.error("Could not submit. Please call +971 56 534 5459 directly.");
     } finally {
       setLoading(false);
     }
   };
 
   return (
-    <section id="quote-section" className={`py-20 transition-colors duration-300 border-t border-b ${
+    <section id="quote-section" className={`scroll-mt-32 py-20 transition-colors duration-300 border-t border-b ${
       isDark ? "bg-slate-950 border-slate-900" : "bg-white border-slate-200"
     }`}>
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -73,7 +73,7 @@ const HomeQuoteForm = () => {
           <h2 className={`text-2xl sm:text-3xl lg:text-4xl font-black uppercase tracking-tight ${
             isDark ? "text-white" : "text-slate-900"
           }`}>
-            Call <a href="tel:+971501234567" className="text-brand-blue hover:underline">+971 50 123 4567</a> now to get a customized transport quote.
+            Call <a href="tel:+971565345459" className="text-brand-blue hover:underline">+971 56 534 5459</a> now to get a customized transport quote.
           </h2>
           <p className={`mt-2 text-sm ${isDark ? "text-slate-400" : "text-slate-600"}`}>
             Or submit details below and a heavy logistics advisor will contact you within 15 minutes.
@@ -216,7 +216,7 @@ const HomeQuoteForm = () => {
               whileHover={{ scale: 1.04 }}
               whileTap={{ scale: 0.96 }}
             >
-              {loading ? "Submitting..." : "Get Transport Quote"}
+              {loading ? "Submitting..." : "Get Quotation"}
             </motion.button>
           </div>
         </form>

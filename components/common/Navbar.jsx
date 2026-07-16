@@ -90,10 +90,10 @@ const Navbar = () => {
         <div className="flex items-center gap-2">
           <FaPhoneAlt className="text-brand-blue text-xs shrink-0" />
           <a
-            href="tel:+971501234567"
-            className="hover:text-brand-blue transition"
+            href="tel:+971565345459"
+            className="flex items-center gap-2 hover:text-brand-blue transition-colors duration-200"
           >
-            +971 50 123 4567
+            +971 56 534 5459
           </a>
           <span className="mx-2 text-slate-600">|</span>
           <FaEnvelope className="text-brand-blue text-xs shrink-0" />
@@ -104,12 +104,7 @@ const Navbar = () => {
             hello@onroad.com
           </a>
         </div>
-        <div className="flex items-center gap-4">
-          <span className="text-[10px] bg-brand-blue text-white px-2 py-0.5 rounded font-black tracking-widest uppercase">
-            UAE WIDE
-          </span>
-          <span>FLATBED, LOWBED & CONTAINER SPECIALISTS</span>
-        </div>
+
       </div>
 
       {/* Main Navbar */}
@@ -205,7 +200,7 @@ const Navbar = () => {
                   whileHover={{ scale: 1.03 }}
                   whileTap={{ scale: 0.97 }}
                 >
-                  Connect with us
+                  Contact us
                 </motion.div>
               </a>
             </div>
@@ -361,7 +356,7 @@ const Navbar = () => {
                       className="block text-center py-3 font-extrabold uppercase tracking-widest bg-brand-blue text-white rounded-lg hover:bg-brand-blue-dark hover:scale-[1.02] active:scale-[0.98] shadow-lg transition-all duration-200"
                       onClick={toggleMenu}
                     >
-                      Connect with us
+                      Contact us
                     </a>
                   </div>
                 </motion.div>

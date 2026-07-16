@@ -8,7 +8,7 @@ const Hero = () => {
   const isDark = useSelector((state) => state.darkMode.value);
 
   return (
-    <section className="relative w-full h-[100dvh] min-h-[600px] flex items-center justify-center overflow-hidden">
+    <section className="relative w-full min-h-[100dvh] flex overflow-hidden">
       {/* Background Image Container */}
       <div className="absolute inset-0 z-0">
         <img
@@ -36,23 +36,23 @@ const Hero = () => {
       </div>
 
       {/* Main Hero Container */}
-      <div className="max-w-7xl mx-auto w-full px-4 sm:px-6 lg:px-8 z-10 flex flex-col justify-start md:justify-center h-full pt-[120px] pb-10 md:pt-[140px]">
+      <div className="max-w-7xl mx-auto w-full px-4 sm:px-6 lg:px-8 z-10 flex flex-col justify-start md:justify-center pt-[120px] pb-10 md:pt-[140px] md:pb-20">
         <motion.div
-          className="w-full md:w-3/5 text-left flex flex-col justify-start md:justify-center h-full md:h-auto"
+          className="w-full md:w-3/5 text-left flex flex-col justify-start md:justify-center"
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
         >
           {/* Tagline */}
-          <div className="mb-4">
-            <span className="text-xs md:text-sm font-extrabold tracking-widest text-brand-blue uppercase bg-brand-blue/10 px-3 py-1.5 rounded-md inline-block">
+          <div className="mb-[clamp(0.7rem,2dvh,1rem)]">
+            <span className="text-[clamp(0.65rem,1.5dvh,0.875rem)] font-extrabold tracking-widest text-brand-blue uppercase bg-brand-blue/10 px-3 py-1.5 rounded-md inline-block">
               UAE Transport & Fleet Operations
             </span>
           </div>
 
           {/* Bold Headline (shipamt style) */}
           <h1
-            className={`text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-black leading-tight tracking-tight uppercase ${
+            className={`text-[clamp(1.9rem,6.5dvh,3.75rem)] font-black leading-tight tracking-tight uppercase ${
               isDark ? "text-white" : "text-slate-900"
             }`}
           >
@@ -63,7 +63,7 @@ const Hero = () => {
 
           {/* Subtext description (monetransport style) */}
           <p
-            className={`mt-6 text-sm sm:text-base md:text-lg text-justify leading-relaxed max-w-xl transition-colors ${
+            className={`mt-[clamp(0.9rem,3dvh,1.5rem)] text-[clamp(0.875rem,2.2dvh,1.125rem)] text-justify leading-relaxed max-w-xl transition-colors ${
               isDark ? "text-slate-300" : "text-slate-700"
             }`}
           >

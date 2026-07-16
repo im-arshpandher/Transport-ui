@@ -12,19 +12,19 @@ const ServiceSelector = () => {
       title: "Fleet Rental & Leasing",
       description: <>Secure long-term <b>flatbeds, lowbeds, or pickups</b> or immediate commercial rental to cover seasonal spikes and fleet fluctuations with zero maintenance overhead.</>,
       icon: <FaTruckLoading className="text-3xl text-brand-blue shrink-0" />,
-      link: "/services",
+      link: "/#quote-section",
     },
     {
       title: "Dedicated Project Logistics",
       description: <>Full supply chain management for heavy machinery, structural steel, and construction materials with custom route surveys.</>,
       icon: <FaRoute className="text-3xl text-brand-blue shrink-0" />,
-      link: "/services",
+      link: "/#quote-section",
     },
     {
       title: "UAE Freight Brokerage",
-      description: <>Access verified heavy capacity and handle complex customs clearances smoothly across Dubai, Abu Dhabi, Saudi, and Oman borders.</>,
+      description: <>Access verified heavy capacity and handle complex customs clearances smoothly from all ports.</>,
       icon: <FaShieldAlt className="text-3xl text-brand-blue shrink-0" />,
-      link: "/services",
+      link: "/#quote-section",
     },
   ];
 
@@ -85,7 +85,7 @@ const ServiceSelector = () => {
                 <Link href={service.link}
                   className="inline-flex items-center text-xs font-black uppercase tracking-widest text-brand-blue group-hover:underline"
                 >
-                  Explore Service &rarr;
+                  Get a Quote &rarr;
                 </Link>
               </div>
 
