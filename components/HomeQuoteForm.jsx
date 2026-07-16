@@ -64,19 +64,24 @@ const HomeQuoteForm = () => {
     try {
       // Map form fields to backend expectations
       const payload = new FormData();
-      payload.append("fullName", formData.companyName);
+      payload.append("companyName", formData.companyName);
+      payload.append("phone", formData.phoneNumber);
       payload.append("email", formData.email);
-      payload.append("phoneNumber", formData.phoneNumber);
-      payload.append("serviceType", "transport");
-      payload.append("pickupLocation", formData.pickupZip);
-      payload.append("deliveryLocation", formData.deliveryZip);
-      payload.append("cargoDescription", `Requirements: ${formData.specialRequirements}. Referral: ${formData.referral}`);
+      payload.append("pickupCity", formData.pickupZip);
+      payload.append("deliveryCity", formData.deliveryZip);
+      if (formData.referral) {
+        payload.append("howHeard", formData.referral);
+      }
+      if (formData.specialRequirements) {
+        payload.append("specialRequirements", formData.specialRequirements);
+      }
+      payload.append("cf-turnstile-response", "dummy-token");
       
       files.forEach(file => {
-        payload.append("documents", file);
+        payload.append("files", file); // Must match backend multer field name
       });
 
-      const res = await axios.post("http://localhost:5000/api/quote", payload, {
+      const res = await axios.post("http://localhost:5000/api/quote/submit", payload, {
         headers: {
           "Content-Type": "multipart/form-data"
         }
